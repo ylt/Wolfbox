@@ -18,14 +18,6 @@ namespace WolfBox1
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Main());
-
-            /*Site test = new Booru("http://konachan.com/", "");
-            foreach (SiteEntry entry in test)
-            {
-                Console.WriteLine(entry.Preview);
-            }
-
-            Console.ReadLine();*/
         }
     }
 }
