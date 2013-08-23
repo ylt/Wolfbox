@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,7 +30,8 @@ namespace WolfBox1.Sites
 
     interface SiteEntry
     {
-        string Preview { get; }
+        string PreviewURL { get; }
+        Image PreviewImage { get; }
         string Link { get; }
         int Id { get; }
         string Tags { get; }

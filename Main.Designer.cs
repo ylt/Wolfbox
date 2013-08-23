@@ -187,6 +187,7 @@
             // 
             // Preview
             // 
+            this.Preview.DataPropertyName = "PreviewImage";
             this.Preview.FillWeight = 200F;
             this.Preview.HeaderText = "Preview";
             this.Preview.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;

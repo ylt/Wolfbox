@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 using System.Net;
 using Newtonsoft.Json;
+using System.Drawing;
+using System.IO;
 
 namespace WolfBox1.Sites
 {
@@ -46,6 +48,7 @@ namespace WolfBox1.Sites
 
     class BooruEntry : SiteEntry
     {
+        private WebClient w = new WebClient();
         private string site;
         private BooruImage image;
 
@@ -55,7 +58,27 @@ namespace WolfBox1.Sites
             this.image = image;
         }
 
-        public string Preview
+        Image PreviewImageCache;
+
+        public Image PreviewImage
+        {
+            get
+            {
+                if (PreviewImageCache != null)
+                    return PreviewImageCache;
+                else
+                {
+                    byte[] bytes = w.DownloadData(image.preview_url);
+                    MemoryStream ms = new MemoryStream(bytes);
+                    Image img = Image.FromStream(ms);
+
+                    PreviewImageCache = img;
+                    return img;
+                }
+            }
+        }
+
+        public string PreviewURL
         {
             get
             {
