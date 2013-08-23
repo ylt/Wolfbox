@@ -79,16 +79,21 @@ namespace WolfBox1.Sites
             {
                 if (PreviewImageCache != null)
                     return PreviewImageCache;
-                else
+                else if (!asyncDownloading)
                 {
                     //trigger download
 
                     DownloadImage();
                     return null;
                 }
+                else
+                {
+                    return null;
+                }
             }
         }
 
+        bool asyncDownloading = false;
         private delegate void DownloadImageDelegate();
         public void DownloadImage()
         {
@@ -96,7 +101,7 @@ namespace WolfBox1.Sites
             w.DownloadDataCompleted += new DownloadDataCompletedEventHandler(DownloadComplete);
 
             w.DownloadDataAsync(new Uri(image.preview_url));
-            
+            asyncDownloading = true;
         }
 
         public void DownloadComplete(object sender, DownloadDataCompletedEventArgs e)
