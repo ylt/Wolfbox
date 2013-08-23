@@ -8,6 +8,7 @@ using System.Net;
 using Newtonsoft.Json;
 using System.Drawing;
 using System.IO;
+using System.ComponentModel;
 
 namespace WolfBox1.Sites
 {
@@ -69,9 +70,8 @@ namespace WolfBox1.Sites
                 else
                 {
                     //trigger download
-                    DownloadImageDelegate worker = new DownloadImageDelegate(DownloadImage);
-                    AsyncCallback completedCallback = new AsyncCallback(DownloadComplete);
 
+                    DownloadImage();
                     return null;
                 }
             }
@@ -81,16 +81,20 @@ namespace WolfBox1.Sites
         public void DownloadImage()
         {
             WebClient w = new WebClient();
-            byte[] bytes = w.DownloadData(image.preview_url);
+            w.DownloadDataCompleted += new DownloadDataCompletedEventHandler(DownloadComplete);
+
+            w.DownloadDataAsync(new Uri(image.preview_url));
+            
+        }
+
+        public void DownloadComplete(object sender, DownloadDataCompletedEventArgs e)
+    	{
+
+            byte[] bytes = e.Result;
             MemoryStream ms = new MemoryStream(bytes);
             Image img = Image.FromStream(ms);
 
             PreviewImageCache = img;
-        }
-
-        public void DownloadComplete(IAsyncResult ar)
-        {
-
         }
 
         public string PreviewURL
