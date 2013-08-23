@@ -2,7 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -50,12 +52,67 @@ namespace WolfBox1.Sites
         }
     }
 
-    interface SiteEntry
+    abstract class SiteEntry
     {
-        string PreviewURL { get; }
-        Image PreviewImage { get; }
-        string Link { get; }
-        int Id { get; }
-        string Tags { get; }
+        protected Site site;
+
+        public abstract string PreviewURL { get; }
+        public abstract string ImageURL { get; }
+        /*Image PreviewImage { get; }*/
+        public abstract string Link { get; }
+        public abstract int Id { get; }
+        public abstract string Tags { get; }
+
+        Image PreviewImageCache;
+
+        public Image PreviewImage
+        {
+            get
+            {
+                if (PreviewImageCache != null)
+                    return PreviewImageCache;
+                else if (!asyncDownloading)
+                {
+                    //trigger download
+
+                    DownloadPreview();
+                    return null;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
+
+        bool asyncDownloading = false;
+        private delegate void DownloadImageDelegate();
+        public void DownloadPreview()
+        {
+            WebClient w = new WebClient();
+            w.DownloadDataCompleted += new DownloadDataCompletedEventHandler(DownloadPreviewComplete);
+
+            w.DownloadDataAsync(new Uri(PreviewURL));
+            asyncDownloading = true;
+        }
+
+        public void DownloadPreviewComplete(object sender, DownloadDataCompletedEventArgs e)
+        {
+
+            byte[] bytes = e.Result;
+            MemoryStream ms = new MemoryStream(bytes);
+            Image img = Image.FromStream(ms);
+
+            PreviewImageCache = img;
+            site.Refresh(site.bs.List.IndexOf(this));
+        }
+
+
+        public void DownloadImage(string filename)
+        {
+            WebClient w = new WebClient();
+
+            w.DownloadFileAsync(new Uri(ImageURL), filename);
+        }
     }
 }

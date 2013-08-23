@@ -34,7 +34,7 @@ namespace WolfBox1.Sites
 		    {
                 BooruEntry entry = new BooruEntry(this, jimage);
 			    entries.Add(entry);
-                entry.DownloadImage();
+                entry.DownloadPreview();
 		    }
 
             DataSource = entries;
@@ -65,60 +65,16 @@ namespace WolfBox1.Sites
     class BooruEntry : SiteEntry
     {
        
-        private Booru site;
+        private Booru bsite;
         private BooruImage image;
 
         public BooruEntry(Booru site, BooruImage image)
         {
-            this.site = site;
+            this.site = this.bsite = site;
             this.image = image;
         }
 
-        Image PreviewImageCache;
-
-        public Image PreviewImage
-        {
-            get
-            {
-                if (PreviewImageCache != null)
-                    return PreviewImageCache;
-                else if (!asyncDownloading)
-                {
-                    //trigger download
-
-                    DownloadImage();
-                    return null;
-                }
-                else
-                {
-                    return null;
-                }
-            }
-        }
-
-        bool asyncDownloading = false;
-        private delegate void DownloadImageDelegate();
-        public void DownloadImage()
-        {
-            WebClient w = new WebClient();
-            w.DownloadDataCompleted += new DownloadDataCompletedEventHandler(DownloadComplete);
-
-            w.DownloadDataAsync(new Uri(image.preview_url));
-            asyncDownloading = true;
-        }
-
-        public void DownloadComplete(object sender, DownloadDataCompletedEventArgs e)
-    	{
-
-            byte[] bytes = e.Result;
-            MemoryStream ms = new MemoryStream(bytes);
-            Image img = Image.FromStream(ms);
-
-            PreviewImageCache = img;
-            site.Refresh(site.bs.List.IndexOf(this));
-        }
-
-        public string PreviewURL
+        override public string PreviewURL
         {
             get
             {
@@ -126,15 +82,23 @@ namespace WolfBox1.Sites
             }
         }
 
-        public string Link
+        override public string ImageURL
         {
             get
             {
-                return this.site.SiteURL + "/post/show/" + image.id + "/"; ;
+                return image.file_url;
             }
         }
 
-        public int Id
+        override public string Link
+        {
+            get
+            {
+                return this.bsite.SiteURL + "/post/show/" + image.id + "/"; ;
+            }
+        }
+
+        override public int Id
         {
             get
             {
@@ -142,7 +106,7 @@ namespace WolfBox1.Sites
             }
         }
 
-        public string Tags
+        override public string Tags
         {
             get
             {
