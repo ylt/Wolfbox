@@ -48,7 +48,7 @@ namespace WolfBox1.Sites
 
     class BooruEntry : SiteEntry
     {
-        private WebClient w = new WebClient();
+       
         private string site;
         private BooruImage image;
 
@@ -68,14 +68,29 @@ namespace WolfBox1.Sites
                     return PreviewImageCache;
                 else
                 {
-                    byte[] bytes = w.DownloadData(image.preview_url);
-                    MemoryStream ms = new MemoryStream(bytes);
-                    Image img = Image.FromStream(ms);
+                    //trigger download
+                    DownloadImageDelegate worker = new DownloadImageDelegate(DownloadImage);
+                    AsyncCallback completedCallback = new AsyncCallback(DownloadComplete);
 
-                    PreviewImageCache = img;
-                    return img;
+                    return null;
                 }
             }
+        }
+
+        private delegate void DownloadImageDelegate();
+        public void DownloadImage()
+        {
+            WebClient w = new WebClient();
+            byte[] bytes = w.DownloadData(image.preview_url);
+            MemoryStream ms = new MemoryStream(bytes);
+            Image img = Image.FromStream(ms);
+
+            PreviewImageCache = img;
+        }
+
+        public void DownloadComplete(IAsyncResult ar)
+        {
+
         }
 
         public string PreviewURL

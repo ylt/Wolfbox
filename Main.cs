@@ -129,10 +129,11 @@ namespace WolfBox1
 
         private void downloadsb_Click(object sender, EventArgs e)
         {
-            //list.SelectedRows[0].Cells[2].Value = list.SelectedRows[0].Cells[2].Value;
             try
             {
-                MessageBox.Show("Downloading " + list.SelectedRows[0].Cells[2].Value);
+                SiteEntry entry = (SiteEntry)list.SelectedRows[0].DataBoundItem;
+                MessageBox.Show("Downloading " + entry.Link);
+
                 //w.DownloadFile(list.Rows[list.SelectedRows[0].Index].Cells[2].Value.ToString(), Properties.Settings.Default["folder"].ToString());
             }
             catch(Exception ex)
