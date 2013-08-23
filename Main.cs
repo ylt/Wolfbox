@@ -143,11 +143,12 @@ namespace WolfBox1
 
         private void list_SelectionChanged(object sender, EventArgs e)
         {
+            int count = list.SelectedRows.Count;
             foreach (DataGridViewRow row in list.Rows)
             {
                 if (row.Selected == true)
                 {
-                    row.Height = 100;
+                    row.Height = Math.Max(100/count, 30);
                 }
                 else
                 {
