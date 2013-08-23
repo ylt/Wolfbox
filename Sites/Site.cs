@@ -5,22 +5,35 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace WolfBox1.Sites
 {
-    abstract class Site : IEnumerable<SiteEntry>
+    abstract class Site
     {
+
+        public BindingSource bs = new BindingSource();
+
+        public Site()
+        {
+            
+        }
+
+        public void Refresh()
+        {
+            bs.ResetBindings(false);
+        }
+
+        public object DataSource
+        {
+            set
+            {
+                bs.DataSource = value;
+            }
+        }
+
         public abstract List<SiteEntry> getPosts();
 
-        IEnumerator<SiteEntry> IEnumerable<SiteEntry>.GetEnumerator()
-        {
-            return getPosts().GetEnumerator();
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return (IEnumerator)getPosts().GetEnumerator();
-        }
 
         override public string ToString()
         {

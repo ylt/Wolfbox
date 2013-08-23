@@ -20,7 +20,7 @@ namespace WolfBox1.Sites
 
         private string siteURL;
         private string search;
-        public Booru(string siteURL, string search)
+        public Booru(string siteURL, string search) : base()
 	    {
             this.siteURL = siteURL;
             this.search = search;
@@ -31,9 +31,21 @@ namespace WolfBox1.Sites
 		    entries = new List<SiteEntry>();
             foreach (BooruImage jimage in jimages)
 		    {
-			    entries.Add(new BooruEntry(siteURL, jimage));
+			    entries.Add(new BooruEntry(this, jimage));
 		    }
+
+            DataSource = entries;
 	    }
+
+        public string SiteURL
+        {
+            get
+            {
+                return siteURL;
+            }
+        }
+
+
 
         override public List<SiteEntry> getPosts()
         {
@@ -50,10 +62,10 @@ namespace WolfBox1.Sites
     class BooruEntry : SiteEntry
     {
        
-        private string site;
+        private Booru site;
         private BooruImage image;
 
-        public BooruEntry(string site, BooruImage image)
+        public BooruEntry(Booru site, BooruImage image)
         {
             this.site = site;
             this.image = image;
@@ -95,6 +107,7 @@ namespace WolfBox1.Sites
             Image img = Image.FromStream(ms);
 
             PreviewImageCache = img;
+            site.Refresh();
         }
 
         public string PreviewURL
@@ -109,7 +122,7 @@ namespace WolfBox1.Sites
         {
             get
             {
-                return this.site + "/post/show/" + image.id + "/"; ;
+                return this.site.SiteURL + "/post/show/" + image.id + "/"; ;
             }
         }
 

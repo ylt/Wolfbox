@@ -93,9 +93,10 @@ namespace WolfBox1
 
 
                 Site test = new Booru("http://konachan.com", "page=" + pageb.Text + "&tags=" + tagsb.Text);
-                BindingSource bs = new BindingSource();
+                /*BindingSource bs = new BindingSource();
                 bs.DataSource = test.getPosts();
-                list.DataSource = bs;
+                list.DataSource = bs;*/
+                list.DataSource = test.bs;
             }
             catch { }
         }
