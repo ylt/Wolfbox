@@ -13,15 +13,18 @@ namespace WolfBox1.Sites
     {
 
         public BindingSource bs = new BindingSource();
+        private DataGridView dgv;
 
-        public Site()
+        public Site(DataGridView dgv)
         {
-            
+            this.dgv = dgv;
         }
 
         public void Refresh()
         {
-            bs.ResetBindings(false);
+            int scroll = dgv.FirstDisplayedScrollingRowIndex;
+            bs.ResetBindings(true);
+            dgv.FirstDisplayedScrollingRowIndex = scroll;
         }
 
         public object DataSource

@@ -9,6 +9,7 @@ using Newtonsoft.Json;
 using System.Drawing;
 using System.IO;
 using System.ComponentModel;
+using System.Windows.Forms;
 
 namespace WolfBox1.Sites
 {
@@ -20,7 +21,7 @@ namespace WolfBox1.Sites
 
         private string siteURL;
         private string search;
-        public Booru(string siteURL, string search) : base()
+        public Booru(DataGridView dgv, string siteURL, string search) : base(dgv)
 	    {
             this.siteURL = siteURL;
             this.search = search;
