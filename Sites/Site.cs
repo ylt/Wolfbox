@@ -20,11 +20,14 @@ namespace WolfBox1.Sites
             this.dgv = dgv;
         }
 
-        public void Refresh()
+        public void Refresh(int row)
         {
-            int scroll = dgv.FirstDisplayedScrollingRowIndex;
-            bs.ResetBindings(true);
-            dgv.FirstDisplayedScrollingRowIndex = scroll;
+            if (dgv.Rows[row].Cells[0].Displayed)
+            {
+                int scroll = dgv.FirstDisplayedScrollingRowIndex;
+                bs.ResetBindings(true);
+                dgv.FirstDisplayedScrollingRowIndex = scroll;
+            }
         }
 
         public object DataSource

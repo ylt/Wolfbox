@@ -115,7 +115,7 @@ namespace WolfBox1.Sites
             Image img = Image.FromStream(ms);
 
             PreviewImageCache = img;
-            site.Refresh();
+            site.Refresh(site.bs.List.IndexOf(this));
         }
 
         public string PreviewURL
