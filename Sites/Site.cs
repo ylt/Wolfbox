@@ -24,9 +24,12 @@ namespace WolfBox1.Sites
         {
             if (dgv.Rows[row].Cells[0].Displayed)
             {
-                int scroll = dgv.FirstDisplayedScrollingRowIndex;
-                bs.ResetBindings(true);
-                dgv.FirstDisplayedScrollingRowIndex = scroll;
+                //int scroll = dgv.FirstDisplayedScrollingRowIndex;
+                //bs.ResetBindings(true);
+                //dgv.FirstDisplayedScrollingRowIndex = scroll;
+                DataGridViewImageCell imageCell = new DataGridViewImageCell();
+                imageCell.Value = getPosts()[row].PreviewImage;
+                dgv.Rows[row].Cells[0].Value = imageCell;
             }
         }
 
