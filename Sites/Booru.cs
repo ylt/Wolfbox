@@ -32,7 +32,9 @@ namespace WolfBox1.Sites
 		    entries = new List<SiteEntry>();
             foreach (BooruImage jimage in jimages)
 		    {
-			    entries.Add(new BooruEntry(this, jimage));
+                BooruEntry entry = new BooruEntry(this, jimage);
+			    entries.Add(entry);
+                entry.DownloadImage();
 		    }
 
             DataSource = entries;
