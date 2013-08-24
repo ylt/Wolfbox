@@ -125,7 +125,9 @@ namespace WolfBox1
                 MessageBox.Show("Downloading " + entry.ImageURL);
                 statusl.Text = "Downloading...";
 
-                entry.DownloadImage(Properties.Settings.Default["folder"].ToString()+"\\"+entry.Id + ".jpg");
+                //entry.DownloadImage(Properties.Settings.Default["folder"].ToString()+"\\"+entry.Id + ".jpg");
+                entry.DownloadImage(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\" + entry.Id + ".jpg");
+                Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
                 //w.DownloadFile(entry.ImageURL, Properties.Settings.Default["folder"].ToString());
             }
             catch(Exception ex)
