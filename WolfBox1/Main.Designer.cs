@@ -35,17 +35,16 @@
             this.pageb = new System.Windows.Forms.TextBox();
             this.listb = new System.Windows.Forms.Button();
             this.downloadsb = new System.Windows.Forms.Button();
-            this.downloadab = new System.Windows.Forms.Button();
             this.tagsb = new System.Windows.Forms.TextBox();
             this.imglist = new System.Windows.Forms.ImageList(this.components);
             this.list = new System.Windows.Forms.DataGridView();
+            this.folderb = new System.Windows.Forms.Button();
+            this.statusl = new System.Windows.Forms.Label();
             this.Preview = new System.Windows.Forms.DataGridViewImageColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Link = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Progress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tags = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.folderb = new System.Windows.Forms.Button();
-            this.statusl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.list)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,15 +90,6 @@
             this.downloadsb.Text = "Download Selected";
             this.downloadsb.UseVisualStyleBackColor = true;
             this.downloadsb.Click += new System.EventHandler(this.downloadsb_Click);
-            // 
-            // downloadab
-            // 
-            this.downloadab.Location = new System.Drawing.Point(479, 13);
-            this.downloadab.Name = "downloadab";
-            this.downloadab.Size = new System.Drawing.Size(77, 23);
-            this.downloadab.TabIndex = 5;
-            this.downloadab.Text = "Download All";
-            this.downloadab.UseVisualStyleBackColor = true;
             // 
             // tagsb
             // 
@@ -165,6 +155,27 @@
             this.list.TabIndex = 7;
             this.list.SelectionChanged += new System.EventHandler(this.list_SelectionChanged);
             // 
+            // folderb
+            // 
+            this.folderb.Location = new System.Drawing.Point(479, 13);
+            this.folderb.Name = "folderb";
+            this.folderb.Size = new System.Drawing.Size(95, 23);
+            this.folderb.TabIndex = 8;
+            this.folderb.Text = "Output Folder";
+            this.folderb.UseVisualStyleBackColor = true;
+            this.folderb.Click += new System.EventHandler(this.folderb_Click);
+            this.folderb.MouseEnter += new System.EventHandler(this.folderb_MouseEnter);
+            this.folderb.MouseLeave += new System.EventHandler(this.folderb_MouseLeave);
+            // 
+            // statusl
+            // 
+            this.statusl.AutoSize = true;
+            this.statusl.Location = new System.Drawing.Point(12, 76);
+            this.statusl.Name = "statusl";
+            this.statusl.Size = new System.Drawing.Size(110, 13);
+            this.statusl.TabIndex = 9;
+            this.statusl.Text = "Welcome to WolfBox!";
+            // 
             // Preview
             // 
             this.Preview.DataPropertyName = "PreviewImage";
@@ -199,7 +210,7 @@
             this.Progress.Name = "Progress";
             this.Progress.ReadOnly = true;
             this.Progress.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Progress.Width = 50;
+            this.Progress.Width = 60;
             // 
             // Tags
             // 
@@ -210,27 +221,6 @@
             this.Tags.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Tags.Width = 500;
             // 
-            // folderb
-            // 
-            this.folderb.Location = new System.Drawing.Point(563, 13);
-            this.folderb.Name = "folderb";
-            this.folderb.Size = new System.Drawing.Size(95, 23);
-            this.folderb.TabIndex = 8;
-            this.folderb.Text = "Output Folder";
-            this.folderb.UseVisualStyleBackColor = true;
-            this.folderb.Click += new System.EventHandler(this.folderb_Click);
-            this.folderb.MouseEnter += new System.EventHandler(this.folderb_MouseEnter);
-            this.folderb.MouseLeave += new System.EventHandler(this.folderb_MouseLeave);
-            // 
-            // statusl
-            // 
-            this.statusl.AutoSize = true;
-            this.statusl.Location = new System.Drawing.Point(12, 76);
-            this.statusl.Name = "statusl";
-            this.statusl.Size = new System.Drawing.Size(110, 13);
-            this.statusl.TabIndex = 9;
-            this.statusl.Text = "Welcome to WolfBox!";
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -240,7 +230,6 @@
             this.Controls.Add(this.folderb);
             this.Controls.Add(this.list);
             this.Controls.Add(this.tagsb);
-            this.Controls.Add(this.downloadab);
             this.Controls.Add(this.downloadsb);
             this.Controls.Add(this.listb);
             this.Controls.Add(this.pageb);
@@ -260,7 +249,6 @@
         private System.Windows.Forms.TextBox pageb;
         private System.Windows.Forms.Button listb;
         private System.Windows.Forms.Button downloadsb;
-        private System.Windows.Forms.Button downloadab;
         private System.Windows.Forms.TextBox tagsb;
         private System.Windows.Forms.ImageList imglist;
         private System.Windows.Forms.DataGridView list;
