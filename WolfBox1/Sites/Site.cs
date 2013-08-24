@@ -23,19 +23,6 @@ namespace WolfBox1.Sites
             this.dgv = dgv;
         }
 
-        public void Refresh(int row)
-        {
-            if (dgv.Rows[row].Cells[0].Displayed)
-            {
-                //int scroll = dgv.FirstDisplayedScrollingRowIndex;
-                //bs.ResetBindings(true);
-                //dgv.FirstDisplayedScrollingRowIndex = scroll;
-                DataGridViewImageCell imageCell = new DataGridViewImageCell();
-                imageCell.Value = getPosts()[row].PreviewImage;
-                dgv.Rows[row].Cells[0].Value = imageCell;
-            }
-        }
-
         public object DataSource
         {
             set
@@ -53,7 +40,7 @@ namespace WolfBox1.Sites
         }
     }
 
-    abstract class SiteEntry
+    abstract class SiteEntry : INotifyPropertyChanged
     {
         protected Site site;
 
@@ -114,7 +101,8 @@ namespace WolfBox1.Sites
             Image img = Image.FromStream(ms);
 
             PreviewImageCache = img;
-            site.Refresh(site.bs.List.IndexOf(this));
+            //site.Refresh(site.bs.List.IndexOf(this));
+            RaisePropertyChanged("PreviewImage");
         }
 
 
@@ -129,11 +117,23 @@ namespace WolfBox1.Sites
         public void DownloadImageProgress(object sender, DownloadProgressChangedEventArgs e)
         {
             progress = e.ProgressPercentage;
+            //site.bs.ResetBindings(false);
+            RaisePropertyChanged("Progress");
         }
 
         public void DownloadImageComplete(object sender, AsyncCompletedEventArgs e)
         {
 
         }
+
+        private void RaisePropertyChanged(string caller)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(caller));
+            }
+        }
+        public event PropertyChangedEventHandler PropertyChanged;
+
     }
 }
