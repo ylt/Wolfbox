@@ -119,19 +119,23 @@ namespace WolfBox1
 
         private void downloadsb_Click(object sender, EventArgs e)
         {
-            try
+            foreach (DataGridViewRow row in list.SelectedRows)
             {
-                SiteEntry entry = (SiteEntry)list.SelectedRows[0].DataBoundItem;
-                MessageBox.Show("Downloading " + entry.ImageURL);
-                statusl.Text = "Downloading...";
+                try
+                {
+                    //SiteEntry entry = (SiteEntry)list.SelectedRows[0].DataBoundItem;
+                    SiteEntry entry = (SiteEntry)row.DataBoundItem;
+                    MessageBox.Show("Downloading " + entry.ImageURL);
+                    statusl.Text = "Downloading...";
 
-                //entry.DownloadImage(Properties.Settings.Default["folder"].ToString()+"\\"+entry.Id + ".jpg");
-                entry.DownloadImage(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\" + entry.Id + ".jpg");
-                Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
-                //w.DownloadFile(entry.ImageURL, Properties.Settings.Default["folder"].ToString());
+                    //entry.DownloadImage(Properties.Settings.Default["folder"].ToString()+"\\"+entry.Id + ".jpg");
+                    entry.DownloadImage(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\" + entry.Id + ".jpg");
+                    Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+                    //w.DownloadFile(entry.ImageURL, Properties.Settings.Default["folder"].ToString());
+                }
+                catch (Exception ex)
+                { MessageBox.Show(ex.ToString()); }
             }
-            catch(Exception ex)
-            { MessageBox.Show(ex.ToString()); }
         }
 
         private void list_SelectionChanged(object sender, EventArgs e)
