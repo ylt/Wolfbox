@@ -25,8 +25,6 @@ namespace WolfBox1
         public Main()
         {
             InitializeComponent();
-            w.DownloadFileCompleted += new AsyncCompletedEventHandler(Completed);
-            w.DownloadProgressChanged += new DownloadProgressChangedEventHandler(ProgressChanged);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -117,18 +115,6 @@ namespace WolfBox1
         private void folderb_MouseEnter(object sender, EventArgs e)
         {
             tt.Show(Properties.Settings.Default["folder"].ToString(), folderb);
-        }
-
-
-
-        private void ProgressChanged(object sender, DownloadProgressChangedEventArgs e)
-        {
-            statusl.Text = e.ProgressPercentage.ToString();
-        }
-
-        private void Completed(object sender, AsyncCompletedEventArgs e)
-        {
-            statusl.Text = "Download completed!";
         }
 
         private void downloadsb_Click(object sender, EventArgs e)
