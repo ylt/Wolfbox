@@ -21,7 +21,7 @@ namespace WolfBox1.Sites
 
         private string siteURL;
         private string search;
-        public Booru(DataGridView dgv, string siteURL, string search) : base(dgv)
+        public Booru(string siteURL, string search)
 	    {
             this.siteURL = siteURL;
             this.search = search;

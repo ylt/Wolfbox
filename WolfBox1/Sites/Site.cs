@@ -16,11 +16,9 @@ namespace WolfBox1.Sites
     {
 
         public BindingSource bs = new BindingSource();
-        private DataGridView dgv;
 
-        public Site(DataGridView dgv)
+        public Site()
         {
-            this.dgv = dgv;
         }
 
         public object DataSource

@@ -92,7 +92,8 @@ namespace WolfBox1
                 list.AutoGenerateColumns = false;
 
 
-                Site test = new Booru(list, "http://konachan.com", "page=" + pageb.Text + "&tags=" + tagsb.Text);
+                //Site test = new Booru("http://konachan.com", "page=" + pageb.Text + "&tags=" + tagsb.Text);
+                Site test = new Reddit("http://www.reddit.com/r/hentai/top.json?sort=top&t=all");
                 /*BindingSource bs = new BindingSource();
                 bs.DataSource = test.getPosts();
                 list.DataSource = bs;*/
