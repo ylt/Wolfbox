@@ -134,7 +134,7 @@ namespace WolfBox1
             {
                 SiteEntry entry = (SiteEntry)list.SelectedRows[0].DataBoundItem;
                 MessageBox.Show("Downloading " + entry.ImageURL);
-                entry.DownloadImage(entry.Id + ".jpg");
+
                 //w.DownloadFile(list.Rows[list.SelectedRows[0].Index].Cells[2].Value.ToString(), Properties.Settings.Default["folder"].ToString());
             }
             catch(Exception ex)
