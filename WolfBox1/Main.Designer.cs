@@ -39,13 +39,13 @@
             this.tagsb = new System.Windows.Forms.TextBox();
             this.imglist = new System.Windows.Forms.ImageList(this.components);
             this.list = new System.Windows.Forms.DataGridView();
-            this.folderb = new System.Windows.Forms.Button();
-            this.statusl = new System.Windows.Forms.Label();
             this.Preview = new System.Windows.Forms.DataGridViewImageColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Link = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Progress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tags = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.folderb = new System.Windows.Forms.Button();
+            this.statusl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.list)).BeginInit();
             this.SuspendLayout();
             // 
@@ -165,26 +165,6 @@
             this.list.TabIndex = 7;
             this.list.SelectionChanged += new System.EventHandler(this.list_SelectionChanged);
             // 
-            // folderb
-            // 
-            this.folderb.Location = new System.Drawing.Point(563, 13);
-            this.folderb.Name = "folderb";
-            this.folderb.Size = new System.Drawing.Size(95, 23);
-            this.folderb.TabIndex = 8;
-            this.folderb.Text = "Output Folder";
-            this.folderb.UseVisualStyleBackColor = true;
-            this.folderb.Click += new System.EventHandler(this.folderb_Click);
-            this.folderb.MouseEnter += new System.EventHandler(this.folderb_MouseEnter);
-            // 
-            // statusl
-            // 
-            this.statusl.AutoSize = true;
-            this.statusl.Location = new System.Drawing.Point(12, 76);
-            this.statusl.Name = "statusl";
-            this.statusl.Size = new System.Drawing.Size(110, 13);
-            this.statusl.TabIndex = 9;
-            this.statusl.Text = "Welcome to WolfBox!";
-            // 
             // Preview
             // 
             this.Preview.DataPropertyName = "PreviewImage";
@@ -229,6 +209,27 @@
             this.Tags.ReadOnly = true;
             this.Tags.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Tags.Width = 500;
+            // 
+            // folderb
+            // 
+            this.folderb.Location = new System.Drawing.Point(563, 13);
+            this.folderb.Name = "folderb";
+            this.folderb.Size = new System.Drawing.Size(95, 23);
+            this.folderb.TabIndex = 8;
+            this.folderb.Text = "Output Folder";
+            this.folderb.UseVisualStyleBackColor = true;
+            this.folderb.Click += new System.EventHandler(this.folderb_Click);
+            this.folderb.MouseEnter += new System.EventHandler(this.folderb_MouseEnter);
+            this.folderb.MouseLeave += new System.EventHandler(this.folderb_MouseLeave);
+            // 
+            // statusl
+            // 
+            this.statusl.AutoSize = true;
+            this.statusl.Location = new System.Drawing.Point(12, 76);
+            this.statusl.Name = "statusl";
+            this.statusl.Size = new System.Drawing.Size(110, 13);
+            this.statusl.TabIndex = 9;
+            this.statusl.Text = "Welcome to WolfBox!";
             // 
             // Main
             // 

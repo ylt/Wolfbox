@@ -158,6 +158,14 @@ namespace WolfBox1
             }
         }
 
+        private void folderb_MouseLeave(object sender, EventArgs e)
+        {
+            if (tt.Active == true)
+            {
+                tt.Hide(folderb);
+            }
+        }
+
     }
 }
 
