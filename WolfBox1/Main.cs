@@ -148,7 +148,7 @@ namespace WolfBox1
             {
                 if (row.Selected == true)
                 {
-                    row.Height = Math.Max(100/count, 30);
+                    row.Height = Math.Max(200/count, 30);
                 }
                 else
                 {
