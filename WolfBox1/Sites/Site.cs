@@ -31,7 +31,7 @@ namespace WolfBox1.Sites
             }
         }
 
-        public abstract List<SiteEntry> getPosts();
+        public abstract BindingList<SiteEntry> getPosts();
 
 
         override public string ToString()
@@ -127,14 +127,16 @@ namespace WolfBox1.Sites
         }
 
         //http://jesseliberty.com/2012/06/28/c-5making-inotifypropertychanged-easier/
-        private void RaisePropertyChanged(string caller)
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void RaisePropertyChanged(string name)
         {
-            if (PropertyChanged != null)
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null)
             {
-                PropertyChanged(this, new PropertyChangedEventArgs(caller));
+                handler(this, new PropertyChangedEventArgs(name));
             }
         }
-        public event PropertyChangedEventHandler PropertyChanged;
+        
 
     }
 }

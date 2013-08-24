@@ -17,7 +17,7 @@ namespace WolfBox1.Sites
     {
         private WebClient w = new WebClient();
 
-        private List<SiteEntry> entries;
+        private BindingList<SiteEntry> entries;
 
         private string siteURL;
         private string search;
@@ -29,7 +29,7 @@ namespace WolfBox1.Sites
 		    string jsonText = w.DownloadString(siteURL+"/post.json?"+search);
             List<BooruImage> jimages = JsonConvert.DeserializeObject<List<BooruImage>>(jsonText);
 		
-		    entries = new List<SiteEntry>();
+		    entries = new BindingList<SiteEntry>();
             foreach (BooruImage jimage in jimages)
 		    {
                 BooruEntry entry = new BooruEntry(this, jimage);
@@ -48,7 +48,7 @@ namespace WolfBox1.Sites
             }
         }
 
-        override public List<SiteEntry> getPosts()
+        override public BindingList<SiteEntry> getPosts()
         {
             return entries;
         }

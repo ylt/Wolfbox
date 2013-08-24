@@ -85,7 +85,7 @@ namespace WolfBox1
 
             statusl.Text = "Loading posts...";
 
-            list.Rows.Clear();
+            //list.Rows.Clear();
 
             try
             {
@@ -97,10 +97,13 @@ namespace WolfBox1
                 bs.DataSource = test.getPosts();
                 list.DataSource = bs;*/
                 list.DataSource = test.bs;
+                //list.DataSource = test.getPosts();
+
                 statusl.Text = "Posts loaded!";
             }
             catch { }
         }
+
 
         private void folderb_Click(object sender, EventArgs e)
         {
