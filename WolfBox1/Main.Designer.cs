@@ -206,6 +206,7 @@
             // 
             // Progress
             // 
+            this.Progress.DataPropertyName = "Progress";
             this.Progress.HeaderText = "Progress";
             this.Progress.Name = "Progress";
             this.Progress.ReadOnly = true;

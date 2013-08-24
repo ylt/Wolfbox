@@ -65,11 +65,11 @@ namespace WolfBox1.Sites
         public abstract string Tags { get; }
 
 
-        private int percentage;
-        public int Percentage {
+        private int progress;
+        public int Progress {
             get
             {
-                return percentage;
+                return progress;
             }
         }
 
@@ -128,7 +128,7 @@ namespace WolfBox1.Sites
 
         public void DownloadImageProgress(object sender, DownloadProgressChangedEventArgs e)
         {
-            percentage = e.ProgressPercentage;
+            progress = e.ProgressPercentage;
         }
 
         public void DownloadImageComplete(object sender, AsyncCompletedEventArgs e)
