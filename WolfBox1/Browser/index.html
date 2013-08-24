@@ -10,19 +10,27 @@
         <div class="formwrapper">
 
             <form id="form">
-                <table>
-
-                </table>
+                <div>
+                    <select name="site">
+                        <option value="http://www.konachan.com">www.konachan.com</option>
+                        <option value="http://www.danbooru.com">www.danbooru.com</option>
+                        <option value="http://www.gelbooru.com">www.gelbooru.com</option>
+                    </select>
+                    <input type="text" name="page" placeholder="p#" />
+                    <button>List/Refresh</button>
+                    <button>Downlad Selected</button>
+                    <button>Output Folder</button>
+                    <button>Options</button>
+                </div>
+                <div>
+                    <input nametype="text" placeholder="Tags"/>
+                </div>
             </form>
         </div>
 
         <div id="formresults">
-            <select name="site">
-                <option value="http://www.konachan.com">www.konachan.com</option>
-                <option value="http://www.danbooru.com">www.danbooru.com</option>
-                <option value="http://www.gelbooru.com">www.gelbooru.com</option>
-            </select>
-            <input name="page" placeholder="p#" />
+
+
         </div>
     </body>
 </html>

@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Options));
             this.outputformatl = new System.Windows.Forms.Label();
-            this.outputformatbox = new System.Windows.Forms.TextBox();
             this.opsepline = new System.Windows.Forms.Label();
             this.ophelpl = new System.Windows.Forms.Label();
             this.formatsaveb = new System.Windows.Forms.Button();
             this.formatdefaultb = new System.Windows.Forms.Button();
+            this.outputformatbox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // outputformatl
@@ -46,18 +46,6 @@
             this.outputformatl.Size = new System.Drawing.Size(74, 13);
             this.outputformatl.TabIndex = 0;
             this.outputformatl.Text = "Output Format";
-            // 
-            // outputformatbox
-            // 
-            this.outputformatbox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.outputformatbox.Location = new System.Drawing.Point(12, 29);
-            this.outputformatbox.Name = "outputformatbox";
-            this.outputformatbox.Size = new System.Drawing.Size(260, 20);
-            this.outputformatbox.TabIndex = 1;
-            this.outputformatbox.Enter += new System.EventHandler(this.outputformatbox_Enter);
-            this.outputformatbox.Leave += new System.EventHandler(this.outputformatbox_Leave);
             // 
             // opsepline
             // 
@@ -101,6 +89,23 @@
             this.formatdefaultb.UseVisualStyleBackColor = true;
             this.formatdefaultb.Click += new System.EventHandler(this.formatdefaultb_Click);
             // 
+            // outputformatbox
+            // 
+            this.outputformatbox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.outputformatbox.Items.AddRange(new object[] {
+            "{server} - {id} - {tags}",
+            "{server}/{id} - {tags}",
+            "{year}-{month}/{server} - {id} {tags}",
+            "{date} {server} {tags}"});
+            this.outputformatbox.Location = new System.Drawing.Point(12, 29);
+            this.outputformatbox.Name = "outputformatbox";
+            this.outputformatbox.Size = new System.Drawing.Size(260, 21);
+            this.outputformatbox.TabIndex = 1;
+            this.outputformatbox.Enter += new System.EventHandler(this.outputformatbox_Enter);
+            this.outputformatbox.Leave += new System.EventHandler(this.outputformatbox_Leave);
+            // 
             // Options
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -122,10 +127,10 @@
         #endregion
 
         private System.Windows.Forms.Label outputformatl;
-        private System.Windows.Forms.TextBox outputformatbox;
         private System.Windows.Forms.Label opsepline;
         private System.Windows.Forms.Label ophelpl;
         private System.Windows.Forms.Button formatsaveb;
         private System.Windows.Forms.Button formatdefaultb;
+        private System.Windows.Forms.ComboBox outputformatbox;
     }
 }
