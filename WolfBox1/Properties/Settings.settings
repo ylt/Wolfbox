@@ -5,5 +5,8 @@
     <Setting Name="folder" Type="System.String" Scope="User">
       <Value Profile="(Default)">C:</Value>
     </Setting>
+    <Setting Name="fname" Type="System.String" Scope="User">
+      <Value Profile="(Default)">{server} - {id} - {tag}</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

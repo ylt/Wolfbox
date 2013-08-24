@@ -34,5 +34,17 @@ namespace WolfBox1.Properties {
                 this["folder"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("{server} - {id} - {tag}")]
+        public string fname {
+            get {
+                return ((string)(this["fname"]));
+            }
+            set {
+                this["fname"] = value;
+            }
+        }
     }
 }

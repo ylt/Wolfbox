@@ -166,6 +166,12 @@ namespace WolfBox1
             }
         }
 
+        private void optionsb_Click(object sender, EventArgs e)
+        {
+            Options options = new Options();
+            options.Show();
+        }
+
     }
 }
 
