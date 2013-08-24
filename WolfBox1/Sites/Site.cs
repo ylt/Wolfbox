@@ -64,6 +64,15 @@ namespace WolfBox1.Sites
         public abstract int Id { get; }
         public abstract string Tags { get; }
 
+
+        private int percentage;
+        public int Percentage {
+            get
+            {
+                return percentage;
+            }
+        }
+
         Image PreviewImageCache;
 
         public Image PreviewImage
@@ -119,6 +128,7 @@ namespace WolfBox1.Sites
 
         public void DownloadImageProgress(object sender, DownloadProgressChangedEventArgs e)
         {
+            percentage = e.ProgressPercentage;
         }
 
         public void DownloadImageComplete(object sender, AsyncCompletedEventArgs e)
