@@ -85,6 +85,8 @@ namespace WolfBox1
                 tagsb.Text = "";
             }
 
+            statusl.Text = "Loading posts...";
+
             list.Rows.Clear();
 
             try
@@ -97,6 +99,7 @@ namespace WolfBox1
                 bs.DataSource = test.getPosts();
                 list.DataSource = bs;*/
                 list.DataSource = test.bs;
+                statusl.Text = "Posts loaded!";
             }
             catch { }
         }
@@ -134,6 +137,7 @@ namespace WolfBox1
             {
                 SiteEntry entry = (SiteEntry)list.SelectedRows[0].DataBoundItem;
                 MessageBox.Show("Downloading " + entry.ImageURL);
+                statusl.Text = "Downloading...";
 
                 entry.DownloadImage(Properties.Settings.Default["folder"].ToString()+"\\"+entry.Id + ".jpg");
                 //w.DownloadFile(entry.ImageURL, Properties.Settings.Default["folder"].ToString());
