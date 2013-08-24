@@ -126,6 +126,7 @@ namespace WolfBox1.Sites
 
         }
 
+        //http://jesseliberty.com/2012/06/28/c-5making-inotifypropertychanged-easier/
         private void RaisePropertyChanged(string caller)
         {
             if (PropertyChanged != null)
