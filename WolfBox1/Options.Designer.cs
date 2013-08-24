@@ -117,6 +117,8 @@
             this.Controls.Add(this.opsepline);
             this.Controls.Add(this.outputformatbox);
             this.Controls.Add(this.outputformatl);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Options";
             this.Text = "Options";
             this.ResumeLayout(false);
