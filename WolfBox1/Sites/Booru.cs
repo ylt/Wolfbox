@@ -48,8 +48,6 @@ namespace WolfBox1.Sites
             }
         }
 
-
-
         override public List<SiteEntry> getPosts()
         {
             return entries;

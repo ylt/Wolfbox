@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -111,8 +112,18 @@ namespace WolfBox1.Sites
         public void DownloadImage(string filename)
         {
             WebClient w = new WebClient();
-
+            w.DownloadFileCompleted += new AsyncCompletedEventHandler(DownloadImageComplete); 
+            w.DownloadProgressChanged += new DownloadProgressChangedEventHandler(DownloadImageProgress);
             w.DownloadFileAsync(new Uri(ImageURL), filename);
+        }
+
+        public void DownloadImageProgress(object sender, DownloadProgressChangedEventArgs e)
+        {
+        }
+
+        public void DownloadImageComplete(object sender, AsyncCompletedEventArgs e)
+        {
+
         }
     }
 }
