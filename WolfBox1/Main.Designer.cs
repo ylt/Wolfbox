@@ -43,7 +43,8 @@
             this.optionsb = new System.Windows.Forms.Button();
             this.Preview = new System.Windows.Forms.DataGridViewImageColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.au = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Author = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Uploader = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Progress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tags = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.list)).BeginInit();
@@ -125,7 +126,8 @@
             this.list.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Preview,
             this.ID,
-            this.au,
+            this.Author,
+            this.Uploader,
             this.Progress,
             this.Tags});
             this.list.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
@@ -206,14 +208,20 @@
             this.ID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.ID.Width = 80;
             // 
-            // au
+            // Author
             // 
-            this.au.DataPropertyName = "au";
-            this.au.HeaderText = "Author/Uploader";
-            this.au.Name = "au";
-            this.au.ReadOnly = true;
-            this.au.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.au.Width = 300;
+            this.Author.DataPropertyName = "Author";
+            this.Author.HeaderText = "Author";
+            this.Author.Name = "Author";
+            this.Author.ReadOnly = true;
+            this.Author.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Uploader
+            // 
+            this.Uploader.DataPropertyName = "Uploader";
+            this.Uploader.HeaderText = "Uploader";
+            this.Uploader.Name = "Uploader";
+            this.Uploader.ReadOnly = true;
             // 
             // Progress
             // 
@@ -270,7 +278,8 @@
         private System.Windows.Forms.Button optionsb;
         private System.Windows.Forms.DataGridViewImageColumn Preview;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn au;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Author;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Uploader;
         private System.Windows.Forms.DataGridViewTextBoxColumn Progress;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tags;
     }
