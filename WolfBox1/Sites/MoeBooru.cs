@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace WolfBox1.Sites
 {
-    class Booru : Site
+    class MoeBooru : Site
     {
         private WebClient w = new WebClient();
 
@@ -21,18 +21,18 @@ namespace WolfBox1.Sites
 
         private string siteURL;
         private string search;
-        public Booru(string siteURL, string search)
+        public MoeBooru(string siteURL, string search)
 	    {
             this.siteURL = siteURL;
             this.search = search;
 
 		    string jsonText = w.DownloadString(siteURL+"/post.json?"+search);
-            List<BooruImage> jimages = JsonConvert.DeserializeObject<List<BooruImage>>(jsonText);
+            List<MoeBooruImage> jimages = JsonConvert.DeserializeObject<List<MoeBooruImage>>(jsonText);
 		
 		    entries = new BindingList<SiteEntry>();
-            foreach (BooruImage jimage in jimages)
+            foreach (MoeBooruImage jimage in jimages)
 		    {
-                BooruEntry entry = new BooruEntry(this, jimage);
+                MoeBooruEntry entry = new MoeBooruEntry(this, jimage);
 			    entries.Add(entry);
                 entry.DownloadPreview();
 		    }
@@ -60,23 +60,23 @@ namespace WolfBox1.Sites
         }
     }
 
-    class BooruEntry : SiteEntry
+    class MoeBooruEntry : SiteEntry
     {
        
-        private Booru bsite;
-        private BooruImage image;
+        private MoeBooru bsite;
+        private MoeBooruImage image;
 
-        public BooruEntry(Booru site, BooruImage image)
+        public MoeBooruEntry(MoeBooru site, MoeBooruImage image)
         {
             this.site = this.bsite = site;
             this.image = image;
         }
 
-        override public int CreationTime
+        override public DateTime CreationTime
         {
             get
             {
-                return image.created_at;
+                return Util.UnixTimeStampToDateTime(image.created_at);
             }
         }
 
@@ -129,40 +129,49 @@ namespace WolfBox1.Sites
         }
     }
 
-    public class BooruImage
+    public class MoeBooruImage
     {
         public int id { get; set; }
         public string tags { get; set; }
+
         public int created_at { get; set; }
         public int creator_id { get; set; }
         public string author { get; set; }
         public int change { get; set; }
+
         public string source { get; set; }
         public int score { get; set; }
         public string md5 { get; set; }
         public int file_size { get; set; }
         public string file_url { get; set; }
         public bool is_shown_in_index { get; set; }
+
         public string preview_url { get; set; }
         public int preview_width { get; set; }
         public int preview_height { get; set; }
         public int actual_preview_width { get; set; }
         public int actual_preview_height { get; set; }
+
         public string sample_url { get; set; }
         public int sample_width { get; set; }
         public int sample_height { get; set; }
         public int sample_file_size { get; set; }
+
         public string jpeg_url { get; set; }
         public int jpeg_width { get; set; }
         public int jpeg_height { get; set; }
         public int jpeg_file_size { get; set; }
+
         public string rating { get; set; }
         public bool has_children { get; set; }
         public object parent_id { get; set; }
         public string status { get; set; }
+
         public int width { get; set; }
         public int height { get; set; }
+
         public bool is_held { get; set; }
+
         public string frames_pending_string { get; set; }
         public List<object> frames_pending { get; set; }
         public string frames_string { get; set; }

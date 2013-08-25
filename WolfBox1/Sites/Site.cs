@@ -46,7 +46,7 @@ namespace WolfBox1.Sites
         public abstract string PreviewURL { get; }
         public abstract string ImageURL { get; }
         /*Image PreviewImage { get; }*/
-        public abstract int CreationTime { get; }
+        public abstract DateTime CreationTime { get; }
         public abstract string Link { get; }
         public abstract int Id { get; }
         public abstract string Tags { get; }
