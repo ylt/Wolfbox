@@ -56,7 +56,7 @@ namespace WolfBox1.Sites
 
         override public string ToString()
         {
-            return "Booru[URL:" + siteURL + ", Search: " + search + ", hits: " + entries.Count.ToString() + "]";
+            return "Danbooru[URL:" + siteURL + ", Search: " + search + ", hits: " + entries.Count.ToString() + "]";
         }
     }
 

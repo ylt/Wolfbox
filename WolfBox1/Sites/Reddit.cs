@@ -79,11 +79,11 @@ namespace WolfBox1.Sites
             this.image = image;
         }
 
-        override public int CreationTime
+        override public DateTime CreationTime
         {
             get
             {
-                return 0;
+                return DateTime.Now;
             }
         }
 

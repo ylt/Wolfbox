@@ -105,7 +105,7 @@ namespace WolfBox1
                     list.AutoGenerateColumns = false;
 
 
-                    Site test = new MoeBooru("http://konachan.com", "page=" + pageb.Text + "&tags=" + tagsb.Text);
+                    Site test = new Moebooru("http://konachan.com", "page=" + pageb.Text + "&tags=" + tagsb.Text);
                     //Site test = new Reddit("http://www.reddit.com/r/hentai/top.json?sort=top&t=all");
                     /*BindingSource bs = new BindingSource();
                     bs.DataSource = test.getPosts();
@@ -116,7 +116,7 @@ namespace WolfBox1
                 else if (serverlist.Text == "Danbooru")
                 {
                     list.AutoGenerateColumns = false;
-                    Site test = new MoeBooru("http://danbooru.donmai.us", "page=" + pageb.Text + "&tags=" + tagsb.Text);
+                    Site test = new Moebooru("http://danbooru.donmai.us", "page=" + pageb.Text + "&tags=" + tagsb.Text);
                     list.DataSource = test.bs;
                 }
                 else if (serverlist.Text == "Gelbooru")

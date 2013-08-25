@@ -59,6 +59,9 @@
       <DependentUpon>Options.cs</DependentUpon>
     </Compile>
     <Compile Include="Sites\Booru.cs" />
+    <Compile Include="Sites\Danbooru.cs" />
+    <Compile Include="Sites\Gelbooru.cs" />
+    <Compile Include="Sites\Moebooru.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +72,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sites\Reddit.cs" />
     <Compile Include="Sites\Site.cs" />
+    <Compile Include="Util.cs" />
     <Compile Include="WBViewer.cs">
       <SubType>Form</SubType>
     </Compile>
