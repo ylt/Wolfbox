@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.serverlist = new System.Windows.Forms.ComboBox();
             this.pageb = new System.Windows.Forms.TextBox();
             this.listb = new System.Windows.Forms.Button();
@@ -38,14 +38,14 @@
             this.tagsb = new System.Windows.Forms.TextBox();
             this.imglist = new System.Windows.Forms.ImageList(this.components);
             this.list = new System.Windows.Forms.DataGridView();
-            this.Preview = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Link = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Progress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tags = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.folderb = new System.Windows.Forms.Button();
             this.statusl = new System.Windows.Forms.Label();
             this.optionsb = new System.Windows.Forms.Button();
+            this.Preview = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.au = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Progress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tags = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.list)).BeginInit();
             this.SuspendLayout();
             // 
@@ -125,7 +125,7 @@
             this.list.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Preview,
             this.ID,
-            this.Link,
+            this.au,
             this.Progress,
             this.Tags});
             this.list.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
@@ -133,18 +133,18 @@
             this.list.Location = new System.Drawing.Point(13, 104);
             this.list.Name = "list";
             this.list.ReadOnly = true;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.list.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.list.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.list.RowHeadersVisible = false;
             this.list.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.list.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.list.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.list.RowTemplate.Height = 200;
             this.list.RowTemplate.ReadOnly = true;
             this.list.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -155,52 +155,6 @@
             this.list.Size = new System.Drawing.Size(945, 274);
             this.list.TabIndex = 7;
             this.list.SelectionChanged += new System.EventHandler(this.list_SelectionChanged);
-            // 
-            // Preview
-            // 
-            this.Preview.DataPropertyName = "PreviewImage";
-            this.Preview.FillWeight = 200F;
-            this.Preview.HeaderText = "Preview";
-            this.Preview.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.Preview.Name = "Preview";
-            this.Preview.ReadOnly = true;
-            this.Preview.Width = 200;
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "Id";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ID.Width = 80;
-            // 
-            // Link
-            // 
-            this.Link.DataPropertyName = "Link";
-            this.Link.HeaderText = "Link";
-            this.Link.Name = "Link";
-            this.Link.ReadOnly = true;
-            this.Link.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Link.Width = 300;
-            // 
-            // Progress
-            // 
-            this.Progress.DataPropertyName = "Progress";
-            this.Progress.HeaderText = "Progress";
-            this.Progress.Name = "Progress";
-            this.Progress.ReadOnly = true;
-            this.Progress.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Progress.Width = 60;
-            // 
-            // Tags
-            // 
-            this.Tags.DataPropertyName = "Tags";
-            this.Tags.HeaderText = "Tags";
-            this.Tags.Name = "Tags";
-            this.Tags.ReadOnly = true;
-            this.Tags.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Tags.Width = 500;
             // 
             // folderb
             // 
@@ -232,6 +186,52 @@
             this.optionsb.Text = "Options";
             this.optionsb.UseVisualStyleBackColor = true;
             this.optionsb.Click += new System.EventHandler(this.optionsb_Click);
+            // 
+            // Preview
+            // 
+            this.Preview.DataPropertyName = "PreviewImage";
+            this.Preview.FillWeight = 200F;
+            this.Preview.HeaderText = "Preview";
+            this.Preview.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Preview.Name = "Preview";
+            this.Preview.ReadOnly = true;
+            this.Preview.Width = 200;
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "Id";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ID.Width = 80;
+            // 
+            // au
+            // 
+            this.au.DataPropertyName = "au";
+            this.au.HeaderText = "Author/Uploader";
+            this.au.Name = "au";
+            this.au.ReadOnly = true;
+            this.au.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.au.Width = 300;
+            // 
+            // Progress
+            // 
+            this.Progress.DataPropertyName = "Progress";
+            this.Progress.HeaderText = "Progress";
+            this.Progress.Name = "Progress";
+            this.Progress.ReadOnly = true;
+            this.Progress.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Progress.Width = 60;
+            // 
+            // Tags
+            // 
+            this.Tags.DataPropertyName = "Tags";
+            this.Tags.HeaderText = "Tags";
+            this.Tags.Name = "Tags";
+            this.Tags.ReadOnly = true;
+            this.Tags.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Tags.Width = 500;
             // 
             // Main
             // 
@@ -267,12 +267,12 @@
         private System.Windows.Forms.DataGridView list;
         private System.Windows.Forms.Button folderb;
         private System.Windows.Forms.Label statusl;
+        private System.Windows.Forms.Button optionsb;
         private System.Windows.Forms.DataGridViewImageColumn Preview;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Link;
+        private System.Windows.Forms.DataGridViewTextBoxColumn au;
         private System.Windows.Forms.DataGridViewTextBoxColumn Progress;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tags;
-        private System.Windows.Forms.Button optionsb;
     }
 }
 
