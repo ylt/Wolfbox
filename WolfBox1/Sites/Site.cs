@@ -42,16 +42,18 @@ namespace WolfBox1.Sites
     {
         protected Site site;
 
+        public abstract string Author { get; }
         public abstract string PreviewURL { get; }
         public abstract string ImageURL { get; }
         /*Image PreviewImage { get; }*/
+        public abstract int CreationTime { get; }
         public abstract string Link { get; }
         public abstract int Id { get; }
         public abstract string Tags { get; }
 
 
-        private int progress;
-        public int Progress {
+        private string progress;
+        public string Progress {
             get
             {
                 return progress;
@@ -114,7 +116,7 @@ namespace WolfBox1.Sites
 
         public void DownloadImageProgress(object sender, DownloadProgressChangedEventArgs e)
         {
-            progress = e.ProgressPercentage;
+            progress = e.ProgressPercentage + "%";
             //site.bs.ResetBindings(false);
             RaisePropertyChanged("Progress");
         }

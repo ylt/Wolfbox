@@ -54,9 +54,9 @@
             this.serverlist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.serverlist.FormattingEnabled = true;
             this.serverlist.Items.AddRange(new object[] {
-            "www.konachan.com",
-            "www.danbooru.com",
-            "www.gelbooru.com"});
+            "Konachan",
+            "Danbooru",
+            "Gelbooru"});
             this.serverlist.Location = new System.Drawing.Point(13, 13);
             this.serverlist.Name = "serverlist";
             this.serverlist.Size = new System.Drawing.Size(197, 21);

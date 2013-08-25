@@ -25,7 +25,7 @@ namespace WolfBox1.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string folder {
             get {
                 return ((string)(this["folder"]));
@@ -37,7 +37,7 @@ namespace WolfBox1.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("{server} - {id} - {tag}")]
+        [global::System.Configuration.DefaultSettingValueAttribute("{author} - {id} - {tags}")]
         public string fname {
             get {
                 return ((string)(this["fname"]));

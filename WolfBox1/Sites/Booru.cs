@@ -72,6 +72,22 @@ namespace WolfBox1.Sites
             this.image = image;
         }
 
+        override public int CreationTime
+        {
+            get
+            {
+                return image.created_at;
+            }
+        }
+
+        override public string Author
+        {
+            get
+            {
+                return image.author;
+            }
+        }
+
         override public string PreviewURL
         {
             get

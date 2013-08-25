@@ -36,8 +36,8 @@ namespace WolfBox1
 
         private void formatdefaultb_Click(object sender, EventArgs e)
         {
-            outputformatbox.Text = "{server} - {id} - {tags}";
-            Properties.Settings.Default["fname"] = "{server} - {id} - {tags}";
+            outputformatbox.Text = "{author} - {id} - {tags}";
+            Properties.Settings.Default["fname"] = "{author} - {id} - {tags}";
         }
     }
 }

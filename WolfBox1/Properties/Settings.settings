@@ -3,10 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="folder" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="fname" Type="System.String" Scope="User">
-      <Value Profile="(Default)">{server} - {id} - {tag}</Value>
+      <Value Profile="(Default)">{author} - {id} - {tags}</Value>
     </Setting>
   </Settings>
 </SettingsFile>

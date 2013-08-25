@@ -11,7 +11,6 @@ using System.Text.RegularExpressions;
 using System.Net;
 using System.IO;
 using Newtonsoft.Json;
-
 using WolfBox1.Sites;
 
 namespace WolfBox1
@@ -26,6 +25,18 @@ namespace WolfBox1
         {
             InitializeComponent();
         }
+
+        // Useful function
+
+        //public static string FormatWith(this string format, params object[] args)
+        //{
+        //    if (format == null)
+        //        throw new ArgumentNullException("format");
+
+        //    return string.Format(format, args);
+        //}
+
+        // End of useful function
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -89,16 +100,32 @@ namespace WolfBox1
 
             try
             {
-                list.AutoGenerateColumns = false;
+                if (serverlist.Text == "Konachan")
+                {
+                    list.AutoGenerateColumns = false;
 
 
-                //Site test = new Booru("http://konachan.com", "page=" + pageb.Text + "&tags=" + tagsb.Text);
-                Site test = new Reddit("http://www.reddit.com/r/hentai/top.json?sort=top&t=all");
-                /*BindingSource bs = new BindingSource();
-                bs.DataSource = test.getPosts();
-                list.DataSource = bs;*/
-                list.DataSource = test.bs;
-                //list.DataSource = test.getPosts();
+                    Site test = new Booru("http://konachan.com", "page=" + pageb.Text + "&tags=" + tagsb.Text);
+                    //Site test = new Reddit("http://www.reddit.com/r/hentai/top.json?sort=top&t=all");
+                    /*BindingSource bs = new BindingSource();
+                    bs.DataSource = test.getPosts();
+                    list.DataSource = bs;*/
+                    list.DataSource = test.bs;
+                    //list.DataSource = test.getPosts();
+                }
+                else if (serverlist.Text == "Danbooru")
+                {
+                    list.AutoGenerateColumns = false;
+                    Site test = new Booru("http://danbooru.donmai.us", "page=" + pageb.Text + "&tags=" + tagsb.Text);
+                    list.DataSource = test.bs;
+                }
+                else if (serverlist.Text == "Gelbooru")
+                {
+                    //list.AutoGenerateColumns = false;
+                    //Needs check... Motherfucker seems to be different to others and trying to be cool n' shit when it's not.
+                    //Site test = new Booru("http://gelbooru.com/index.php?", "page=post&s=list&tags=touhou)
+                    //list.DataSource = test.bs;
+                }
 
                 statusl.Text = "Posts loaded!";
             }
@@ -129,16 +156,35 @@ namespace WolfBox1
                 {
                     //SiteEntry entry = (SiteEntry)list.SelectedRows[0].DataBoundItem;
                     SiteEntry entry = (SiteEntry)row.DataBoundItem;
-                    MessageBox.Show("Downloading " + entry.ImageURL);
                     statusl.Text = "Downloading...";
 
                     //entry.DownloadImage(Properties.Settings.Default["folder"].ToString()+"\\"+entry.Id + ".jpg");
-                    entry.DownloadImage(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\" + entry.Id + ".jpg");
+
+                    // Check if there's an output folder.
+                    if (Properties.Settings.Default["folder"].ToString() == "")
+                    {
+                        MessageBox.Show("It seems like this is your first time running WolfBox. Please select a folder to output all of your images.", "Select an output folder", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+                        DialogResult result = fb.ShowDialog();
+                        if (result == DialogResult.OK)
+                        {
+                            statusl.Text = "Output folder set to " + fb.SelectedPath;
+                            Properties.Settings.Default["folder"] = fb.SelectedPath;
+                        }
+                    }
+
+                    var data = new
+                    {
+                        author = entry.Author,
+                        id = entry.Id,
+                        tags = entry.Tags,
+                    };
+
+                    entry.DownloadImage(Properties.Settings.Default["folder"] + "\\" + Properties.Settings.Default["fname"].ToString().FormatWith(data) + ".jpg");
                     Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
                     //w.DownloadFile(entry.ImageURL, Properties.Settings.Default["folder"].ToString());
                 }
                 catch (Exception ex)
-                { MessageBox.Show(ex.ToString()); }
+                { MessageBox.Show("ERROR: " + ex.Message.ToString() + "\n Please check your options") ; }
             }
         }
 
