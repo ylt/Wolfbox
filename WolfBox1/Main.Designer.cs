@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.serverlist = new System.Windows.Forms.ComboBox();
             this.pageb = new System.Windows.Forms.TextBox();
             this.listb = new System.Windows.Forms.Button();
@@ -64,7 +64,7 @@
             // 
             // pageb
             // 
-            this.pageb.Location = new System.Drawing.Point(217, 13);
+            this.pageb.Location = new System.Drawing.Point(12, 40);
             this.pageb.Name = "pageb";
             this.pageb.Size = new System.Drawing.Size(58, 20);
             this.pageb.TabIndex = 2;
@@ -74,7 +74,7 @@
             // 
             // listb
             // 
-            this.listb.Location = new System.Drawing.Point(282, 13);
+            this.listb.Location = new System.Drawing.Point(216, 13);
             this.listb.Name = "listb";
             this.listb.Size = new System.Drawing.Size(75, 23);
             this.listb.TabIndex = 3;
@@ -84,7 +84,7 @@
             // 
             // downloadsb
             // 
-            this.downloadsb.Location = new System.Drawing.Point(363, 13);
+            this.downloadsb.Location = new System.Drawing.Point(297, 13);
             this.downloadsb.Name = "downloadsb";
             this.downloadsb.Size = new System.Drawing.Size(110, 23);
             this.downloadsb.TabIndex = 4;
@@ -94,9 +94,9 @@
             // 
             // tagsb
             // 
-            this.tagsb.Location = new System.Drawing.Point(13, 41);
+            this.tagsb.Location = new System.Drawing.Point(76, 40);
             this.tagsb.Name = "tagsb";
-            this.tagsb.Size = new System.Drawing.Size(544, 20);
+            this.tagsb.Size = new System.Drawing.Size(513, 20);
             this.tagsb.TabIndex = 6;
             this.tagsb.Text = "Tags...";
             this.tagsb.Enter += new System.EventHandler(this.tagsb_Enter);
@@ -133,18 +133,18 @@
             this.list.Location = new System.Drawing.Point(13, 104);
             this.list.Name = "list";
             this.list.ReadOnly = true;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.list.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.list.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.list.RowHeadersVisible = false;
             this.list.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.list.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.list.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.list.RowTemplate.Height = 200;
             this.list.RowTemplate.ReadOnly = true;
             this.list.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -204,7 +204,7 @@
             // 
             // folderb
             // 
-            this.folderb.Location = new System.Drawing.Point(479, 13);
+            this.folderb.Location = new System.Drawing.Point(413, 13);
             this.folderb.Name = "folderb";
             this.folderb.Size = new System.Drawing.Size(95, 23);
             this.folderb.TabIndex = 8;
@@ -225,7 +225,7 @@
             // 
             // optionsb
             // 
-            this.optionsb.Location = new System.Drawing.Point(580, 13);
+            this.optionsb.Location = new System.Drawing.Point(514, 13);
             this.optionsb.Name = "optionsb";
             this.optionsb.Size = new System.Drawing.Size(75, 23);
             this.optionsb.TabIndex = 10;
