@@ -23,7 +23,6 @@ namespace WolfBox1.Sites
         private string search;
         public Danbooru(string siteURL, string search)
         {
-            Console.WriteLine("Danbooru loaded.");
             this.siteURL = siteURL;
             this.search = search;
 
@@ -37,7 +36,6 @@ namespace WolfBox1.Sites
                 entries.Add(entry);
                 entry.DownloadPreview();
             }
-            Console.WriteLine("Danbooru queried. count1: "+jimages.Count+", count2: "+entries.Count);
             DataSource = entries;
         }
 
