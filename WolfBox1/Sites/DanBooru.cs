@@ -23,10 +23,11 @@ namespace WolfBox1.Sites
         private string search;
         public Danbooru(string siteURL, string search)
         {
+            Console.WriteLine("Danbooru loaded.");
             this.siteURL = siteURL;
             this.search = search;
 
-            string jsonText = w.DownloadString(siteURL + "/post.json?" + search);
+            string jsonText = w.DownloadString(siteURL + "/posts.json?" + search);
             List<DanbooruImage> jimages = JsonConvert.DeserializeObject<List<DanbooruImage>>(jsonText);
 
             entries = new BindingList<SiteEntry>();
@@ -36,7 +37,7 @@ namespace WolfBox1.Sites
                 entries.Add(entry);
                 entry.DownloadPreview();
             }
-
+            Console.WriteLine("Danbooru queried. count1: "+jimages.Count+", count2: "+entries.Count);
             DataSource = entries;
         }
 
@@ -92,7 +93,7 @@ namespace WolfBox1.Sites
         {
             get
             {
-                return image.preview_file_url;
+                return bsite.SiteURL + image.preview_file_url;
             }
         }
 
@@ -100,7 +101,7 @@ namespace WolfBox1.Sites
         {
             get
             {
-                return image.file_url;
+                return bsite.SiteURL + image.file_url;
             }
         }
 

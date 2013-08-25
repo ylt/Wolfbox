@@ -97,26 +97,17 @@ namespace WolfBox1
             statusl.Text = "Loading posts...";
 
             //list.Rows.Clear();
-
-            try
-            {
+            list.AutoGenerateColumns = false;
+            //try
+            //{
                 if (serverlist.Text == "Konachan")
                 {
-                    list.AutoGenerateColumns = false;
-
-
                     Site test = new Moebooru("http://konachan.com", "page=" + pageb.Text + "&tags=" + tagsb.Text);
-                    //Site test = new Reddit("http://www.reddit.com/r/hentai/top.json?sort=top&t=all");
-                    /*BindingSource bs = new BindingSource();
-                    bs.DataSource = test.getPosts();
-                    list.DataSource = bs;*/
                     list.DataSource = test.bs;
-                    //list.DataSource = test.getPosts();
                 }
                 else if (serverlist.Text == "Danbooru")
                 {
-                    list.AutoGenerateColumns = false;
-                    Site test = new Moebooru("http://danbooru.donmai.us", "page=" + pageb.Text + "&tags=" + tagsb.Text);
+                    Site test = new Danbooru("http://danbooru.donmai.us", "page=" + pageb.Text + "&tags=" + tagsb.Text);
                     list.DataSource = test.bs;
                 }
                 else if (serverlist.Text == "Gelbooru")
@@ -128,8 +119,8 @@ namespace WolfBox1
                 }
 
                 statusl.Text = "Posts loaded!";
-            }
-            catch { }
+            //}
+            //catch { }
         }
 
 
