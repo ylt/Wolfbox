@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace WolfBox1.Sites
 {
-    class DanBooru : Site
+    class Danbooru : Booru
     {
         private WebClient w = new WebClient();
 
@@ -21,18 +21,18 @@ namespace WolfBox1.Sites
 
         private string siteURL;
         private string search;
-        public DanBooru(string siteURL, string search)
+        public Danbooru(string siteURL, string search)
         {
             this.siteURL = siteURL;
             this.search = search;
 
             string jsonText = w.DownloadString(siteURL + "/post.json?" + search);
-            List<DanBooruImage> jimages = JsonConvert.DeserializeObject<List<DanBooruImage>>(jsonText);
+            List<DanbooruImage> jimages = JsonConvert.DeserializeObject<List<DanbooruImage>>(jsonText);
 
             entries = new BindingList<SiteEntry>();
-            foreach (DanBooruImage jimage in jimages)
+            foreach (DanbooruImage jimage in jimages)
             {
-                DanBooruEntry entry = new DanBooruEntry(this, jimage);
+                DanbooruEntry entry = new DanbooruEntry(this, jimage);
                 entries.Add(entry);
                 entry.DownloadPreview();
             }
@@ -60,13 +60,13 @@ namespace WolfBox1.Sites
         }
     }
 
-    class DanBooruEntry : SiteEntry
+    class DanbooruEntry : SiteEntry
     {
 
-        private DanBooru bsite;
-        private DanBooruImage image;
+        private Danbooru bsite;
+        private DanbooruImage image;
 
-        public DanBooruEntry(DanBooru site, DanBooruImage image)
+        public DanbooruEntry(Danbooru site, DanbooruImage image)
         {
             this.site = this.bsite = site;
             this.image = image;
@@ -129,7 +129,7 @@ namespace WolfBox1.Sites
         }
     }
 
-    public class DanBooruImage
+    public class DanbooruImage
     {
         public object approver_id { get; set; }
         public string created_at { get; set; }

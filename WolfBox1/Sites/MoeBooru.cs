@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace WolfBox1.Sites
 {
-    class MoeBooru : Site
+    class Moebooru : Booru
     {
         private WebClient w = new WebClient();
 
@@ -21,18 +21,18 @@ namespace WolfBox1.Sites
 
         private string siteURL;
         private string search;
-        public MoeBooru(string siteURL, string search)
+        public Moebooru(string siteURL, string search)
 	    {
             this.siteURL = siteURL;
             this.search = search;
 
 		    string jsonText = w.DownloadString(siteURL+"/post.json?"+search);
-            List<MoeBooruImage> jimages = JsonConvert.DeserializeObject<List<MoeBooruImage>>(jsonText);
+            List<MoebooruImage> jimages = JsonConvert.DeserializeObject<List<MoebooruImage>>(jsonText);
 		
 		    entries = new BindingList<SiteEntry>();
-            foreach (MoeBooruImage jimage in jimages)
+            foreach (MoebooruImage jimage in jimages)
 		    {
-                MoeBooruEntry entry = new MoeBooruEntry(this, jimage);
+                MoebooruEntry entry = new MoebooruEntry(this, jimage);
 			    entries.Add(entry);
                 entry.DownloadPreview();
 		    }
@@ -60,13 +60,13 @@ namespace WolfBox1.Sites
         }
     }
 
-    class MoeBooruEntry : SiteEntry
+    class MoebooruEntry : SiteEntry
     {
        
-        private MoeBooru bsite;
-        private MoeBooruImage image;
+        private Moebooru bsite;
+        private MoebooruImage image;
 
-        public MoeBooruEntry(MoeBooru site, MoeBooruImage image)
+        public MoebooruEntry(Moebooru site, MoebooruImage image)
         {
             this.site = this.bsite = site;
             this.image = image;
@@ -129,7 +129,7 @@ namespace WolfBox1.Sites
         }
     }
 
-    public class MoeBooruImage
+    public class MoebooruImage
     {
         public int id { get; set; }
         public string tags { get; set; }
