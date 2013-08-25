@@ -38,14 +38,15 @@
             this.tagsb = new System.Windows.Forms.TextBox();
             this.imglist = new System.Windows.Forms.ImageList(this.components);
             this.list = new System.Windows.Forms.DataGridView();
-            this.Preview = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Link = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Progress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tags = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.folderb = new System.Windows.Forms.Button();
             this.statusl = new System.Windows.Forms.Label();
             this.optionsb = new System.Windows.Forms.Button();
+            this.Preview = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Author = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Uploader = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Progress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tags = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.list)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +65,7 @@
             // 
             // pageb
             // 
-            this.pageb.Location = new System.Drawing.Point(217, 13);
+            this.pageb.Location = new System.Drawing.Point(12, 40);
             this.pageb.Name = "pageb";
             this.pageb.Size = new System.Drawing.Size(58, 20);
             this.pageb.TabIndex = 2;
@@ -74,7 +75,7 @@
             // 
             // listb
             // 
-            this.listb.Location = new System.Drawing.Point(282, 13);
+            this.listb.Location = new System.Drawing.Point(216, 13);
             this.listb.Name = "listb";
             this.listb.Size = new System.Drawing.Size(75, 23);
             this.listb.TabIndex = 3;
@@ -84,7 +85,7 @@
             // 
             // downloadsb
             // 
-            this.downloadsb.Location = new System.Drawing.Point(363, 13);
+            this.downloadsb.Location = new System.Drawing.Point(297, 13);
             this.downloadsb.Name = "downloadsb";
             this.downloadsb.Size = new System.Drawing.Size(110, 23);
             this.downloadsb.TabIndex = 4;
@@ -94,9 +95,9 @@
             // 
             // tagsb
             // 
-            this.tagsb.Location = new System.Drawing.Point(13, 41);
+            this.tagsb.Location = new System.Drawing.Point(76, 40);
             this.tagsb.Name = "tagsb";
-            this.tagsb.Size = new System.Drawing.Size(544, 20);
+            this.tagsb.Size = new System.Drawing.Size(513, 20);
             this.tagsb.TabIndex = 6;
             this.tagsb.Text = "Tags...";
             this.tagsb.Enter += new System.EventHandler(this.tagsb_Enter);
@@ -125,7 +126,8 @@
             this.list.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Preview,
             this.ID,
-            this.Link,
+            this.Author,
+            this.Uploader,
             this.Progress,
             this.Tags});
             this.list.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
@@ -156,55 +158,9 @@
             this.list.TabIndex = 7;
             this.list.SelectionChanged += new System.EventHandler(this.list_SelectionChanged);
             // 
-            // Preview
-            // 
-            this.Preview.DataPropertyName = "PreviewImage";
-            this.Preview.FillWeight = 200F;
-            this.Preview.HeaderText = "Preview";
-            this.Preview.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.Preview.Name = "Preview";
-            this.Preview.ReadOnly = true;
-            this.Preview.Width = 200;
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "Id";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ID.Width = 80;
-            // 
-            // Link
-            // 
-            this.Link.DataPropertyName = "Link";
-            this.Link.HeaderText = "Link";
-            this.Link.Name = "Link";
-            this.Link.ReadOnly = true;
-            this.Link.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Link.Width = 300;
-            // 
-            // Progress
-            // 
-            this.Progress.DataPropertyName = "Progress";
-            this.Progress.HeaderText = "Progress";
-            this.Progress.Name = "Progress";
-            this.Progress.ReadOnly = true;
-            this.Progress.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Progress.Width = 60;
-            // 
-            // Tags
-            // 
-            this.Tags.DataPropertyName = "Tags";
-            this.Tags.HeaderText = "Tags";
-            this.Tags.Name = "Tags";
-            this.Tags.ReadOnly = true;
-            this.Tags.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Tags.Width = 500;
-            // 
             // folderb
             // 
-            this.folderb.Location = new System.Drawing.Point(479, 13);
+            this.folderb.Location = new System.Drawing.Point(413, 13);
             this.folderb.Name = "folderb";
             this.folderb.Size = new System.Drawing.Size(95, 23);
             this.folderb.TabIndex = 8;
@@ -225,13 +181,65 @@
             // 
             // optionsb
             // 
-            this.optionsb.Location = new System.Drawing.Point(580, 13);
+            this.optionsb.Location = new System.Drawing.Point(514, 13);
             this.optionsb.Name = "optionsb";
             this.optionsb.Size = new System.Drawing.Size(75, 23);
             this.optionsb.TabIndex = 10;
             this.optionsb.Text = "Options";
             this.optionsb.UseVisualStyleBackColor = true;
             this.optionsb.Click += new System.EventHandler(this.optionsb_Click);
+            // 
+            // Preview
+            // 
+            this.Preview.DataPropertyName = "PreviewImage";
+            this.Preview.FillWeight = 200F;
+            this.Preview.HeaderText = "Preview";
+            this.Preview.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Preview.Name = "Preview";
+            this.Preview.ReadOnly = true;
+            this.Preview.Width = 200;
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "Id";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ID.Width = 80;
+            // 
+            // Author
+            // 
+            this.Author.DataPropertyName = "Author";
+            this.Author.HeaderText = "Author";
+            this.Author.Name = "Author";
+            this.Author.ReadOnly = true;
+            this.Author.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Uploader
+            // 
+            this.Uploader.DataPropertyName = "Uploader";
+            this.Uploader.HeaderText = "Uploader";
+            this.Uploader.Name = "Uploader";
+            this.Uploader.ReadOnly = true;
+            // 
+            // Progress
+            // 
+            this.Progress.DataPropertyName = "Progress";
+            this.Progress.HeaderText = "Progress";
+            this.Progress.Name = "Progress";
+            this.Progress.ReadOnly = true;
+            this.Progress.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Progress.Width = 60;
+            // 
+            // Tags
+            // 
+            this.Tags.DataPropertyName = "Tags";
+            this.Tags.HeaderText = "Tags";
+            this.Tags.Name = "Tags";
+            this.Tags.ReadOnly = true;
+            this.Tags.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Tags.Width = 500;
             // 
             // Main
             // 
@@ -267,12 +275,13 @@
         private System.Windows.Forms.DataGridView list;
         private System.Windows.Forms.Button folderb;
         private System.Windows.Forms.Label statusl;
+        private System.Windows.Forms.Button optionsb;
         private System.Windows.Forms.DataGridViewImageColumn Preview;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Link;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Author;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Uploader;
         private System.Windows.Forms.DataGridViewTextBoxColumn Progress;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tags;
-        private System.Windows.Forms.Button optionsb;
     }
 }
 
