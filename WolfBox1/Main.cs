@@ -41,25 +41,14 @@ namespace WolfBox1
         private void Form1_Load(object sender, EventArgs e)
         {
             serverlist.SelectedIndex = 0;
-            pageb.ForeColor = Color.Gray;
             tagsb.ForeColor = Color.Gray;
-        }
-
-        private void pageb_Enter(object sender, EventArgs e)
-        {
-            if (pageb.Text == "Page...")
-            {
-                pageb.Text = "";
-                pageb.ForeColor = Color.Black;
-            }
         }
 
         private void pageb_Leave(object sender, EventArgs e)
         {
             if (pageb.Text == "")
             {
-                pageb.Text = "Page...";
-                pageb.ForeColor = Color.Gray;
+                pageb.Value = 1;
             }
         }
 
@@ -84,10 +73,10 @@ namespace WolfBox1
         private void listb_Click(object sender, EventArgs e)
         {
             double num;
-            if (pageb.Text == "Page..." || !double.TryParse(pageb.Text, out num))
+            if (pageb.Value == 0 || !double.TryParse(pageb.Text, out num))
             {
                 pageb.ForeColor = Color.Black;
-                pageb.Text = "1";
+                pageb.Value = 1;
             }
             if (tagsb.Text == "Tags...")
             {
@@ -121,22 +110,6 @@ namespace WolfBox1
                 statusl.Text = "Posts loaded!";
             //}
             //catch { }
-        }
-
-
-        private void folderb_Click(object sender, EventArgs e)
-        {
-            DialogResult result = fb.ShowDialog();
-            if (result == DialogResult.OK)
-            {
-                statusl.Text = "Output folder set to " + fb.SelectedPath;
-                Properties.Settings.Default["folder"] = fb.SelectedPath;
-            }
-        }
-
-        private void folderb_MouseEnter(object sender, EventArgs e)
-        {
-            tt.Show(Properties.Settings.Default["folder"].ToString(), folderb);
         }
 
         private void downloadsb_Click(object sender, EventArgs e)
@@ -195,15 +168,17 @@ namespace WolfBox1
             }
         }
 
-        private void folderb_MouseLeave(object sender, EventArgs e)
+        private void outputFolderToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (tt.Active == true)
+            DialogResult result = fb.ShowDialog();
+            if (result == DialogResult.OK)
             {
-                tt.Hide(folderb);
+                statusl.Text = "Output folder set to " + fb.SelectedPath;
+                Properties.Settings.Default["folder"] = fb.SelectedPath;
             }
         }
 
-        private void optionsb_Click(object sender, EventArgs e)
+        private void outputFormatToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Options options = new Options();
             options.Show();

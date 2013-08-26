@@ -32,15 +32,18 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.serverlist = new System.Windows.Forms.ComboBox();
-            this.pageb = new System.Windows.Forms.TextBox();
             this.listb = new System.Windows.Forms.Button();
             this.downloadsb = new System.Windows.Forms.Button();
             this.tagsb = new System.Windows.Forms.TextBox();
             this.imglist = new System.Windows.Forms.ImageList(this.components);
             this.list = new System.Windows.Forms.DataGridView();
-            this.folderb = new System.Windows.Forms.Button();
-            this.statusl = new System.Windows.Forms.Label();
-            this.optionsb = new System.Windows.Forms.Button();
+            this.pageb = new System.Windows.Forms.NumericUpDown();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.outputFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.outputFormatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.statusl = new System.Windows.Forms.ToolStripStatusLabel();
             this.Preview = new System.Windows.Forms.DataGridViewImageColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Author = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +51,9 @@
             this.Progress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tags = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.list)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pageb)).BeginInit();
+            this.menuStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // serverlist
@@ -58,24 +64,14 @@
             "Konachan",
             "Danbooru",
             "Gelbooru"});
-            this.serverlist.Location = new System.Drawing.Point(13, 13);
+            this.serverlist.Location = new System.Drawing.Point(13, 29);
             this.serverlist.Name = "serverlist";
             this.serverlist.Size = new System.Drawing.Size(197, 21);
             this.serverlist.TabIndex = 0;
             // 
-            // pageb
-            // 
-            this.pageb.Location = new System.Drawing.Point(12, 40);
-            this.pageb.Name = "pageb";
-            this.pageb.Size = new System.Drawing.Size(58, 20);
-            this.pageb.TabIndex = 2;
-            this.pageb.Text = "Page...";
-            this.pageb.Enter += new System.EventHandler(this.pageb_Enter);
-            this.pageb.Leave += new System.EventHandler(this.pageb_Leave);
-            // 
             // listb
             // 
-            this.listb.Location = new System.Drawing.Point(216, 13);
+            this.listb.Location = new System.Drawing.Point(216, 27);
             this.listb.Name = "listb";
             this.listb.Size = new System.Drawing.Size(75, 23);
             this.listb.TabIndex = 3;
@@ -85,7 +81,7 @@
             // 
             // downloadsb
             // 
-            this.downloadsb.Location = new System.Drawing.Point(297, 13);
+            this.downloadsb.Location = new System.Drawing.Point(297, 27);
             this.downloadsb.Name = "downloadsb";
             this.downloadsb.Size = new System.Drawing.Size(110, 23);
             this.downloadsb.TabIndex = 4;
@@ -95,9 +91,9 @@
             // 
             // tagsb
             // 
-            this.tagsb.Location = new System.Drawing.Point(76, 40);
+            this.tagsb.Location = new System.Drawing.Point(60, 56);
             this.tagsb.Name = "tagsb";
-            this.tagsb.Size = new System.Drawing.Size(513, 20);
+            this.tagsb.Size = new System.Drawing.Size(347, 20);
             this.tagsb.TabIndex = 6;
             this.tagsb.Text = "Tags...";
             this.tagsb.Enter += new System.EventHandler(this.tagsb_Enter);
@@ -118,7 +114,9 @@
             this.list.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.list.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.list.BackgroundColor = System.Drawing.Color.White;
+            this.list.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.list.CausesValidation = false;
             this.list.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
             this.list.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
@@ -132,7 +130,7 @@
             this.Tags});
             this.list.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.list.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.list.Location = new System.Drawing.Point(13, 104);
+            this.list.Location = new System.Drawing.Point(13, 82);
             this.list.Name = "list";
             this.list.ReadOnly = true;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -154,63 +152,97 @@
             this.list.ShowCellToolTips = false;
             this.list.ShowEditingIcon = false;
             this.list.ShowRowErrors = false;
-            this.list.Size = new System.Drawing.Size(945, 274);
+            this.list.Size = new System.Drawing.Size(945, 304);
             this.list.TabIndex = 7;
             this.list.SelectionChanged += new System.EventHandler(this.list_SelectionChanged);
             // 
-            // folderb
+            // pageb
             // 
-            this.folderb.Location = new System.Drawing.Point(413, 13);
-            this.folderb.Name = "folderb";
-            this.folderb.Size = new System.Drawing.Size(95, 23);
-            this.folderb.TabIndex = 8;
-            this.folderb.Text = "Output Folder";
-            this.folderb.UseVisualStyleBackColor = true;
-            this.folderb.Click += new System.EventHandler(this.folderb_Click);
-            this.folderb.MouseEnter += new System.EventHandler(this.folderb_MouseEnter);
-            this.folderb.MouseLeave += new System.EventHandler(this.folderb_MouseLeave);
+            this.pageb.Location = new System.Drawing.Point(15, 56);
+            this.pageb.Name = "pageb";
+            this.pageb.Size = new System.Drawing.Size(39, 20);
+            this.pageb.TabIndex = 11;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.settingsToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(970, 24);
+            this.menuStrip1.TabIndex = 12;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
+            this.settingsToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.outputFolderToolStripMenuItem,
+            this.outputFormatToolStripMenuItem});
+            this.settingsToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.settingsToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.White;
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            // 
+            // outputFolderToolStripMenuItem
+            // 
+            this.outputFolderToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
+            this.outputFolderToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
+            this.outputFolderToolStripMenuItem.Name = "outputFolderToolStripMenuItem";
+            this.outputFolderToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.outputFolderToolStripMenuItem.Text = "Output Folder...";
+            this.outputFolderToolStripMenuItem.Click += new System.EventHandler(this.outputFolderToolStripMenuItem_Click);
+            // 
+            // outputFormatToolStripMenuItem
+            // 
+            this.outputFormatToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
+            this.outputFormatToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
+            this.outputFormatToolStripMenuItem.Name = "outputFormatToolStripMenuItem";
+            this.outputFormatToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.outputFormatToolStripMenuItem.Text = "Output Format...";
+            this.outputFormatToolStripMenuItem.Click += new System.EventHandler(this.outputFormatToolStripMenuItem_Click);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.statusl});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 395);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(970, 22);
+            this.statusStrip1.TabIndex = 13;
+            this.statusStrip1.Text = "statusStrip1";
             // 
             // statusl
             // 
-            this.statusl.AutoSize = true;
-            this.statusl.Location = new System.Drawing.Point(12, 76);
             this.statusl.Name = "statusl";
-            this.statusl.Size = new System.Drawing.Size(110, 13);
-            this.statusl.TabIndex = 9;
+            this.statusl.Size = new System.Drawing.Size(121, 17);
             this.statusl.Text = "Welcome to WolfBox!";
-            // 
-            // optionsb
-            // 
-            this.optionsb.Location = new System.Drawing.Point(514, 13);
-            this.optionsb.Name = "optionsb";
-            this.optionsb.Size = new System.Drawing.Size(75, 23);
-            this.optionsb.TabIndex = 10;
-            this.optionsb.Text = "Options";
-            this.optionsb.UseVisualStyleBackColor = true;
-            this.optionsb.Click += new System.EventHandler(this.optionsb_Click);
             // 
             // Preview
             // 
             this.Preview.DataPropertyName = "PreviewImage";
-            this.Preview.FillWeight = 200F;
+            this.Preview.FillWeight = 213.198F;
             this.Preview.HeaderText = "Preview";
             this.Preview.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
             this.Preview.Name = "Preview";
             this.Preview.ReadOnly = true;
-            this.Preview.Width = 200;
             // 
             // ID
             // 
             this.ID.DataPropertyName = "Id";
+            this.ID.FillWeight = 47.95577F;
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
             this.ID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ID.Width = 80;
             // 
             // Author
             // 
             this.Author.DataPropertyName = "Author";
+            this.Author.FillWeight = 58.51339F;
             this.Author.HeaderText = "Author";
             this.Author.Name = "Author";
             this.Author.ReadOnly = true;
@@ -219,6 +251,7 @@
             // Uploader
             // 
             this.Uploader.DataPropertyName = "Uploader";
+            this.Uploader.FillWeight = 53.87841F;
             this.Uploader.HeaderText = "Uploader";
             this.Uploader.Name = "Uploader";
             this.Uploader.ReadOnly = true;
@@ -226,39 +259,45 @@
             // Progress
             // 
             this.Progress.DataPropertyName = "Progress";
+            this.Progress.FillWeight = 37.28549F;
             this.Progress.HeaderText = "Progress";
             this.Progress.Name = "Progress";
             this.Progress.ReadOnly = true;
             this.Progress.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Progress.Width = 60;
             // 
             // Tags
             // 
             this.Tags.DataPropertyName = "Tags";
+            this.Tags.FillWeight = 289.169F;
             this.Tags.HeaderText = "Tags";
             this.Tags.Name = "Tags";
             this.Tags.ReadOnly = true;
             this.Tags.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Tags.Width = 500;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(970, 390);
-            this.Controls.Add(this.optionsb);
-            this.Controls.Add(this.statusl);
-            this.Controls.Add(this.folderb);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(970, 417);
+            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.pageb);
             this.Controls.Add(this.list);
             this.Controls.Add(this.tagsb);
             this.Controls.Add(this.downloadsb);
             this.Controls.Add(this.listb);
-            this.Controls.Add(this.pageb);
             this.Controls.Add(this.serverlist);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.list)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pageb)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -267,15 +306,18 @@
         #endregion
 
         private System.Windows.Forms.ComboBox serverlist;
-        private System.Windows.Forms.TextBox pageb;
         private System.Windows.Forms.Button listb;
         private System.Windows.Forms.Button downloadsb;
         private System.Windows.Forms.TextBox tagsb;
         private System.Windows.Forms.ImageList imglist;
         private System.Windows.Forms.DataGridView list;
-        private System.Windows.Forms.Button folderb;
-        private System.Windows.Forms.Label statusl;
-        private System.Windows.Forms.Button optionsb;
+        private System.Windows.Forms.NumericUpDown pageb;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem outputFolderToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem outputFormatToolStripMenuItem;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel statusl;
         private System.Windows.Forms.DataGridViewImageColumn Preview;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Author;
