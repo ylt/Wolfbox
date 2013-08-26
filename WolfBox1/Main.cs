@@ -114,8 +114,8 @@ namespace WolfBox1
                 {
                     //list.AutoGenerateColumns = false;
                     //Needs check... Motherfucker seems to be different to others and trying to be cool n' shit when it's not.
-                    //Site test = new Booru("http://gelbooru.com/index.php?", "page=post&s=list&tags=touhou)
-                    //list.DataSource = test.bs;
+                    Site test = new Gelbooru("http://gelbooru.com", "touhou");
+                    list.DataSource = test.bs;
                 }
 
                 statusl.Text = "Posts loaded!";
