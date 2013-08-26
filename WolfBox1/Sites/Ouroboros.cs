@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace WolfBox1.Sites
 {
-    class Moebooru : Booru
+    class Ouroboros : Booru
     {
         private WebClient w = new WebClient();
 
@@ -21,24 +21,24 @@ namespace WolfBox1.Sites
 
         private string siteURL;
         private string search;
-        public Moebooru(string siteURL, string search)
-	    {
+        public Ouroboros(string siteURL, string search)
+        {
             this.siteURL = siteURL;
             this.search = search;
 
-		    string jsonText = w.DownloadString(siteURL+"/post.json?"+search);
-            List<MoebooruImage> jimages = JsonConvert.DeserializeObject<List<MoebooruImage>>(jsonText);
-		
-		    entries = new BindingList<SiteEntry>();
-            foreach (MoebooruImage jimage in jimages)
-		    {
-                MoebooruEntry entry = new MoebooruEntry(this, jimage);
-			    entries.Add(entry);
+            string jsonText = w.DownloadString(siteURL + "/post.json?" + search);
+            List<OuroborosImage> jimages = JsonConvert.DeserializeObject<List<OuroborosImage>>(jsonText);
+
+            entries = new BindingList<SiteEntry>();
+            foreach (OuroborosImage jimage in jimages)
+            {
+                OuroborosEntry entry = new OuroborosEntry(this, jimage);
+                entries.Add(entry);
                 entry.DownloadPreview();
-		    }
+            }
 
             DataSource = entries;
-	    }
+        }
 
         public string SiteURL
         {
@@ -53,20 +53,20 @@ namespace WolfBox1.Sites
             return entries;
         }
 
-        
+
         override public string ToString()
         {
-            return "Moebooru[URL:" + siteURL + ", Search: " + search + ", hits: " + entries.Count.ToString() + "]";
+            return "Ouroboros[URL:" + siteURL + ", Search: " + search + ", hits: " + entries.Count.ToString() + "]";
         }
     }
 
-    class MoebooruEntry : SiteEntry
+    class OuroborosEntry : SiteEntry
     {
-       
-        private Moebooru bsite;
-        private MoebooruImage image;
 
-        public MoebooruEntry(Moebooru site, MoebooruImage image)
+        private Ouroboros bsite;
+        private OuroborosImage image;
+
+        public OuroborosEntry(Ouroboros site, OuroborosImage image)
         {
             this.site = this.bsite = site;
             this.image = image;
@@ -76,7 +76,7 @@ namespace WolfBox1.Sites
         {
             get
             {
-                return Util.UnixTimeStampToDateTime(image.created_at);
+                return Util.UnixTimeStampToDateTime(image.created_at.s);
             }
         }
 
@@ -129,12 +129,18 @@ namespace WolfBox1.Sites
         }
     }
 
-    public class MoebooruImage
+    public class OuroborosCreatedAt
+    {
+        public int n { get; set; }
+        public string json_class { get; set; }
+        public int s { get; set; }
+    }
+
+    public class OuroborosImage
     {
         public int id { get; set; }
         public string tags { get; set; }
-
-        public int created_at { get; set; }
+        public OuroborosCreatedAt created_at { get; set; }
         public int creator_id { get; set; }
         public string author { get; set; }
         public int change { get; set; }
@@ -144,23 +150,14 @@ namespace WolfBox1.Sites
         public string md5 { get; set; }
         public int file_size { get; set; }
         public string file_url { get; set; }
-        public bool is_shown_in_index { get; set; }
 
         public string preview_url { get; set; }
         public int preview_width { get; set; }
         public int preview_height { get; set; }
-        public int actual_preview_width { get; set; }
-        public int actual_preview_height { get; set; }
 
         public string sample_url { get; set; }
         public int sample_width { get; set; }
         public int sample_height { get; set; }
-        public int sample_file_size { get; set; }
-
-        public string jpeg_url { get; set; }
-        public int jpeg_width { get; set; }
-        public int jpeg_height { get; set; }
-        public int jpeg_file_size { get; set; }
 
         public string rating { get; set; }
         public bool has_children { get; set; }
@@ -170,12 +167,8 @@ namespace WolfBox1.Sites
         public int width { get; set; }
         public int height { get; set; }
 
-        public bool is_held { get; set; }
-
-        public string frames_pending_string { get; set; }
-        public List<object> frames_pending { get; set; }
-        public string frames_string { get; set; }
-        public List<object> frames { get; set; }
-        public object flag_detail { get; set; }
+        public bool has_notes { get; set; }
+        public bool has_comments { get; set; }
     }
+
 }
