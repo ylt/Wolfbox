@@ -41,3 +41,13 @@ local.properties
 
 # PDT-specific
 .buildpath
+
+#borrowed from sk89q (https://github.com/sk89q/worldedit/blob/master/.gitignore)
+/.classpath
+/.project
+/.settings
+/target
+/bin
+/dependency-reduced-pom.xml
+/*.iml
+/.idea
