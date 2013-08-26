@@ -129,15 +129,16 @@ namespace WolfBox1.Sites
         }
     }
 
-    public class OuroborosCreatedAt
-    {
-        public int n { get; set; }
-        public string json_class { get; set; }
-        public int s { get; set; }
-    }
+    
 
     public class OuroborosImage
     {
+        public class OuroborosCreatedAt //wtf?
+        {
+            public int n { get; set; }
+            public string json_class { get; set; }
+            public int s { get; set; }
+        }
         public int id { get; set; }
         public string tags { get; set; }
         public OuroborosCreatedAt created_at { get; set; }
