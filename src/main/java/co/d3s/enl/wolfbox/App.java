@@ -1,7 +1,7 @@
 package co.d3s.enl.wolfbox;
 
 import co.d3s.enl.wolfbox.sites.Site;
-import co.d3s.enl.wolfbox.sites.SiteEntry;
+import co.d3s.enl.wolfbox.sites.danbooru.Danbooru;
 
 /**
  * Hello world!
@@ -13,6 +13,6 @@ public class App
     {
         //System.out.println( "Hello World!" );
     	
-    	//Site site = new Site();
+    	Site site = new Danbooru("http://danbooru.donmai.us", "");
     }
 }

@@ -2,50 +2,52 @@ package co.d3s.enl.wolfbox.sites.danbooru;
 
 import java.util.Date;
 
+import net.sf.json.JSONObject;
+import co.d3s.enl.wolfbox.sites.BooruEntry;
 import co.d3s.enl.wolfbox.sites.SiteEntry;
 
-public class DanbooruEntry extends SiteEntry{
+public class DanbooruEntry extends BooruEntry {
+	private Danbooru bsite;
+	private JSONObject image;
+	
+	public DanbooruEntry(Danbooru site, JSONObject image) {
+		this.site = this.bsite = site;
+        this.image = image;
+	}
 
 	@Override
 	public String getAuthor() {
-		// TODO Auto-generated method stub
-		return null;
+		return image.getString("uploader_name");
 	}
 
 	@Override
 	public String getPreviewURL() {
-		// TODO Auto-generated method stub
-		return null;
+		return bsite.siteURL + image.getString("preview_file_url");
 	}
 
 	@Override
 	public String getImageURL() {
-		// TODO Auto-generated method stub
-		return null;
+		return bsite.siteURL + image.getString("file_url");
 	}
 
 	@Override
 	public Date getCreationTime() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public String getLink() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.bsite.siteURL + "/post/show/" + image.getString("id") + "/";
 	}
 
 	@Override
 	public int getId() {
-		// TODO Auto-generated method stub
-		return 0;
+		return image.getInt("id");
 	}
 
 	@Override
 	public String getTags() {
-		// TODO Auto-generated method stub
-		return null;
+		return image.getString("Tags");
 	}
 
 }
