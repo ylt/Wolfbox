@@ -32,6 +32,7 @@ public class Danbooru extends Booru {
 				JSONObject node = (JSONObject)nodeo;
 				
 				DanbooruEntry entry = new DanbooruEntry(this, node);
+				entries.add(entry);
 			}
 		}
 		catch (MalformedURLException e) {
@@ -47,5 +48,10 @@ public class Danbooru extends Booru {
 			e.printStackTrace();
 		}
 
+	}
+
+	@Override
+	public List<SiteEntry> getPosts() {
+		return entries;
 	}
 }

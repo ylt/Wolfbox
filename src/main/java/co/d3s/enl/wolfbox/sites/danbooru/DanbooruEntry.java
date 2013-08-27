@@ -47,7 +47,7 @@ public class DanbooruEntry extends BooruEntry {
 
 	@Override
 	public String getTags() {
-		return image.getString("Tags");
+		return image.getString("tag_string");
 	}
 
 }

@@ -4,13 +4,16 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.util.List;
 
-public class Site {
+public abstract class Site {
 
 	public Site()
 	{
 		
 	}
+	
+	public abstract List<SiteEntry> getPosts();
 	
 	@Override
 	public String toString() {
