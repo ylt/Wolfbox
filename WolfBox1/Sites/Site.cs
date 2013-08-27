@@ -63,6 +63,10 @@ namespace WolfBox1.Sites
         }
         public event SiteProgressChange ProgressChange;
 
+        public void triggerProgressChange()
+        {
+            ProgressChange(this, new SiteProgressChangeArgs(this));
+        }
     }
 
     public delegate void SiteProgressChange(object source, SiteProgressChangeArgs e);
@@ -171,19 +175,11 @@ namespace WolfBox1.Sites
 
         public void DownloadImageProgress(object sender, DownloadProgressChangedEventArgs e)
         {
-            //foreach (DataGridViewRow dr in main.list.Rows)
-            //{
-            //    if ((int)dr.Cells[4].Value != null || (int)dr.Cells[4].Value != 0)
-            //    {
-            //        int progresses = (int)dr.Cells[4].Value;
-            //        tprogress = tprogress + progresses;
-            //    }
-            //}
-            //MessageBox.Show(tprogress.ToString());
             main.ProgressBarV = e.ProgressPercentage;
             progress = e.ProgressPercentage;
-            //site.bs.ResetBindings(false);
+
             RaisePropertyChanged("Progress");
+            site.triggerProgressChange();
         }
 
         public void DownloadImageComplete(object sender, AsyncCompletedEventArgs e)
