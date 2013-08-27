@@ -26,18 +26,6 @@ namespace WolfBox1
             InitializeComponent();
         }
 
-        // Useful function
-
-        //public static string FormatWith(this string format, params object[] args)
-        //{
-        //    if (format == null)
-        //        throw new ArgumentNullException("format");
-
-        //    return string.Format(format, args);
-        //}
-
-        // End of useful function
-
         private void Form1_Load(object sender, EventArgs e)
         {
             serverlist.SelectedIndex = 0;
@@ -182,6 +170,18 @@ namespace WolfBox1
         {
             Options options = new Options();
             options.Show();
+        }
+
+        public int ProgressBarV
+        {
+            get
+            {
+                return progresspb.Value;
+            }
+            set
+            {
+                progresspb.Value = value;
+            }
         }
 
     }

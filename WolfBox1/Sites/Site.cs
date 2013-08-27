@@ -114,8 +114,20 @@ namespace WolfBox1.Sites
             w.DownloadFileAsync(new Uri(ImageURL), filename);
         }
 
+        Main main = new Main();
+
         public void DownloadImageProgress(object sender, DownloadProgressChangedEventArgs e)
         {
+            //foreach (DataGridViewRow dr in main.list.Rows)
+            //{
+            //    if ((int)dr.Cells[4].Value != null || (int)dr.Cells[4].Value != 0)
+            //    {
+            //        int progresses = (int)dr.Cells[4].Value;
+            //        tprogress = tprogress + progresses;
+            //    }
+            //}
+            //MessageBox.Show(tprogress.ToString());
+            main.ProgressBarV = e.ProgressPercentage;
             progress = e.ProgressPercentage + "%";
             //site.bs.ResetBindings(false);
             RaisePropertyChanged("Progress");
@@ -123,7 +135,7 @@ namespace WolfBox1.Sites
 
         public void DownloadImageComplete(object sender, AsyncCompletedEventArgs e)
         {
-
+        
         }
 
         //http://jesseliberty.com/2012/06/28/c-5making-inotifypropertychanged-easier/

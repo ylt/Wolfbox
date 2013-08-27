@@ -31,28 +31,35 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.serverlist = new System.Windows.Forms.ComboBox();
             this.listb = new System.Windows.Forms.Button();
             this.downloadsb = new System.Windows.Forms.Button();
             this.tagsb = new System.Windows.Forms.TextBox();
             this.imglist = new System.Windows.Forms.ImageList(this.components);
             this.list = new System.Windows.Forms.DataGridView();
-            this.pageb = new System.Windows.Forms.NumericUpDown();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.outputFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.outputFormatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.statusl = new System.Windows.Forms.ToolStripStatusLabel();
             this.Preview = new System.Windows.Forms.DataGridViewImageColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Author = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Uploader = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Progress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tags = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.outputFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.outputFormatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pageb = new System.Windows.Forms.NumericUpDown();
+            this.statusl = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.BottomToolStripPanel = new System.Windows.Forms.ToolStripPanel();
+            this.TopToolStripPanel = new System.Windows.Forms.ToolStripPanel();
+            this.RightToolStripPanel = new System.Windows.Forms.ToolStripPanel();
+            this.LeftToolStripPanel = new System.Windows.Forms.ToolStripPanel();
+            this.ContentPanel = new System.Windows.Forms.ToolStripContentPanel();
+            this.progresspb = new System.Windows.Forms.ToolStripProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.list)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pageb)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pageb)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -156,71 +163,6 @@
             this.list.TabIndex = 7;
             this.list.SelectionChanged += new System.EventHandler(this.list_SelectionChanged);
             // 
-            // pageb
-            // 
-            this.pageb.Location = new System.Drawing.Point(15, 56);
-            this.pageb.Name = "pageb";
-            this.pageb.Size = new System.Drawing.Size(39, 20);
-            this.pageb.TabIndex = 11;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.settingsToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(970, 24);
-            this.menuStrip1.TabIndex = 12;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // settingsToolStripMenuItem
-            // 
-            this.settingsToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
-            this.settingsToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.outputFolderToolStripMenuItem,
-            this.outputFormatToolStripMenuItem});
-            this.settingsToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.settingsToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.White;
-            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.settingsToolStripMenuItem.Text = "Settings";
-            // 
-            // outputFolderToolStripMenuItem
-            // 
-            this.outputFolderToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
-            this.outputFolderToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.outputFolderToolStripMenuItem.Name = "outputFolderToolStripMenuItem";
-            this.outputFolderToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.outputFolderToolStripMenuItem.Text = "Output Folder...";
-            this.outputFolderToolStripMenuItem.Click += new System.EventHandler(this.outputFolderToolStripMenuItem_Click);
-            // 
-            // outputFormatToolStripMenuItem
-            // 
-            this.outputFormatToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
-            this.outputFormatToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.outputFormatToolStripMenuItem.Name = "outputFormatToolStripMenuItem";
-            this.outputFormatToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.outputFormatToolStripMenuItem.Text = "Output Format...";
-            this.outputFormatToolStripMenuItem.Click += new System.EventHandler(this.outputFormatToolStripMenuItem_Click);
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.statusl});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 395);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(970, 22);
-            this.statusStrip1.TabIndex = 13;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // statusl
-            // 
-            this.statusl.Name = "statusl";
-            this.statusl.Size = new System.Drawing.Size(121, 17);
-            this.statusl.Text = "Welcome to WolfBox!";
-            // 
             // Preview
             // 
             this.Preview.DataPropertyName = "PreviewImage";
@@ -274,6 +216,115 @@
             this.Tags.ReadOnly = true;
             this.Tags.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.settingsToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(970, 24);
+            this.menuStrip1.TabIndex = 12;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
+            this.settingsToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.outputFolderToolStripMenuItem,
+            this.outputFormatToolStripMenuItem});
+            this.settingsToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.settingsToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.White;
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            // 
+            // outputFolderToolStripMenuItem
+            // 
+            this.outputFolderToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
+            this.outputFolderToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
+            this.outputFolderToolStripMenuItem.Name = "outputFolderToolStripMenuItem";
+            this.outputFolderToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.outputFolderToolStripMenuItem.Text = "Output Folder...";
+            this.outputFolderToolStripMenuItem.Click += new System.EventHandler(this.outputFolderToolStripMenuItem_Click);
+            // 
+            // outputFormatToolStripMenuItem
+            // 
+            this.outputFormatToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
+            this.outputFormatToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
+            this.outputFormatToolStripMenuItem.Name = "outputFormatToolStripMenuItem";
+            this.outputFormatToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.outputFormatToolStripMenuItem.Text = "Output Format...";
+            this.outputFormatToolStripMenuItem.Click += new System.EventHandler(this.outputFormatToolStripMenuItem_Click);
+            // 
+            // pageb
+            // 
+            this.pageb.Location = new System.Drawing.Point(15, 56);
+            this.pageb.Name = "pageb";
+            this.pageb.Size = new System.Drawing.Size(39, 20);
+            this.pageb.TabIndex = 11;
+            // 
+            // statusl
+            // 
+            this.statusl.Name = "statusl";
+            this.statusl.Size = new System.Drawing.Size(121, 17);
+            this.statusl.Text = "Welcome to WolfBox!";
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.statusl,
+            this.progresspb});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 395);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(970, 22);
+            this.statusStrip1.TabIndex = 13;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // BottomToolStripPanel
+            // 
+            this.BottomToolStripPanel.Location = new System.Drawing.Point(0, 0);
+            this.BottomToolStripPanel.Name = "BottomToolStripPanel";
+            this.BottomToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.BottomToolStripPanel.RowMargin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.BottomToolStripPanel.Size = new System.Drawing.Size(0, 0);
+            // 
+            // TopToolStripPanel
+            // 
+            this.TopToolStripPanel.Location = new System.Drawing.Point(0, 0);
+            this.TopToolStripPanel.Name = "TopToolStripPanel";
+            this.TopToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.TopToolStripPanel.RowMargin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.TopToolStripPanel.Size = new System.Drawing.Size(0, 0);
+            // 
+            // RightToolStripPanel
+            // 
+            this.RightToolStripPanel.Location = new System.Drawing.Point(0, 0);
+            this.RightToolStripPanel.Name = "RightToolStripPanel";
+            this.RightToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.RightToolStripPanel.RowMargin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.RightToolStripPanel.Size = new System.Drawing.Size(0, 0);
+            // 
+            // LeftToolStripPanel
+            // 
+            this.LeftToolStripPanel.Location = new System.Drawing.Point(0, 0);
+            this.LeftToolStripPanel.Name = "LeftToolStripPanel";
+            this.LeftToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.LeftToolStripPanel.RowMargin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.LeftToolStripPanel.Size = new System.Drawing.Size(0, 0);
+            // 
+            // ContentPanel
+            // 
+            this.ContentPanel.Size = new System.Drawing.Size(150, 150);
+            // 
+            // progresspb
+            // 
+            this.progresspb.Name = "progresspb";
+            this.progresspb.Size = new System.Drawing.Size(100, 16);
+            this.progresspb.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.progresspb.Tag = "";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -288,14 +339,15 @@
             this.Controls.Add(this.listb);
             this.Controls.Add(this.serverlist);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.list)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pageb)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pageb)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -310,20 +362,26 @@
         private System.Windows.Forms.Button downloadsb;
         private System.Windows.Forms.TextBox tagsb;
         private System.Windows.Forms.ImageList imglist;
-        private System.Windows.Forms.DataGridView list;
-        private System.Windows.Forms.NumericUpDown pageb;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem outputFolderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem outputFormatToolStripMenuItem;
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel statusl;
         private System.Windows.Forms.DataGridViewImageColumn Preview;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Author;
         private System.Windows.Forms.DataGridViewTextBoxColumn Uploader;
         private System.Windows.Forms.DataGridViewTextBoxColumn Progress;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tags;
+        private System.Windows.Forms.NumericUpDown pageb;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripPanel BottomToolStripPanel;
+        private System.Windows.Forms.ToolStripPanel TopToolStripPanel;
+        private System.Windows.Forms.ToolStripPanel RightToolStripPanel;
+        private System.Windows.Forms.ToolStripPanel LeftToolStripPanel;
+        private System.Windows.Forms.ToolStripContentPanel ContentPanel;
+        public System.Windows.Forms.ToolStripProgressBar progresspb;
+        public System.Windows.Forms.DataGridView list;
+        public System.Windows.Forms.ToolStripStatusLabel statusl;
     }
 }
 
