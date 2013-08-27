@@ -42,11 +42,16 @@ namespace WolfBox1.Sites
             get
             {
                 int total = 0;
+                int count = 0;
                 foreach(SiteEntry entry in getPosts())
                 {
-                    total += Progress;
+                    if (entry.ProgressInt > 0)
+                    {
+                        total += Progress;
+                        count++;
+                    }
                 }
-                return total / getPosts().Count();
+                return total / count;
             }
         }
         public event SiteProgressChange ProgressChange;
