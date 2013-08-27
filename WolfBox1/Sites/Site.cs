@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace WolfBox1.Sites
 {
-    abstract class Site
+    public abstract class Site
     {
 
         public BindingSource bs = new BindingSource();
@@ -47,7 +47,7 @@ namespace WolfBox1.Sites
                 {
                     if (entry.ProgressInt > 0)
                     {
-                        total += Progress;
+                        total += entry.ProgressInt;
                         count++;
                     }
                 }
@@ -86,7 +86,7 @@ namespace WolfBox1.Sites
         }
     }
 
-    abstract class SiteEntry : INotifyPropertyChanged
+    public abstract class SiteEntry : INotifyPropertyChanged
     {
         protected Site site;
 
@@ -175,7 +175,6 @@ namespace WolfBox1.Sites
 
         public void DownloadImageProgress(object sender, DownloadProgressChangedEventArgs e)
         {
-            main.ProgressBarV = e.ProgressPercentage;
             progress = e.ProgressPercentage;
 
             RaisePropertyChanged("Progress");

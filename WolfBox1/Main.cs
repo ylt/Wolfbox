@@ -75,29 +75,32 @@ namespace WolfBox1
 
             //list.Rows.Clear();
             list.AutoGenerateColumns = false;
-            //try
-            //{
-                if (serverlist.Text == "Konachan")
-                {
-                    Site test = new Moebooru("http://konachan.com", "page=" + pageb.Text + "&tags=" + tagsb.Text);
-                    list.DataSource = test.bs;
-                }
-                else if (serverlist.Text == "Danbooru")
-                {
-                    Site test = new Danbooru("http://danbooru.donmai.us", "page=" + pageb.Text + "&tags=" + tagsb.Text);
-                    list.DataSource = test.bs;
-                }
-                else if (serverlist.Text == "Gelbooru")
-                {
-                    //list.AutoGenerateColumns = false;
-                    //Needs check... Motherfucker seems to be different to others and trying to be cool n' shit when it's not.
-                    Site test = new Gelbooru("http://gelbooru.com", "touhou");
-                    list.DataSource = test.bs;
-                }
 
-                statusl.Text = "Posts loaded!";
-            //}
-            //catch { }
+            Site site = null;
+            if (serverlist.Text == "Konachan")
+            {
+                site = new Moebooru("http://konachan.com", "page=" + pageb.Text + "&tags=" + tagsb.Text);
+            }
+            else if (serverlist.Text == "Danbooru")
+            {
+                site = new Danbooru("http://danbooru.donmai.us", "page=" + pageb.Text + "&tags=" + tagsb.Text);
+            }
+            else if (serverlist.Text == "Gelbooru")
+            {
+                site = new Gelbooru("http://gelbooru.com", tagsb.Text);
+            }
+
+            list.DataSource = site.bs;
+
+            site.ProgressChange += site_ProgressChange;
+
+            statusl.Text = "Posts loaded!";
+
+        }
+
+        void site_ProgressChange(object source, SiteProgressChangeArgs e)
+        {
+            progresspb.Value = ((Site)source).Progress;
         }
 
         private void downloadsb_Click(object sender, EventArgs e)
@@ -170,18 +173,6 @@ namespace WolfBox1
         {
             Options options = new Options();
             options.Show();
-        }
-
-        public int ProgressBarV
-        {
-            get
-            {
-                return progresspb.Value;
-            }
-            set
-            {
-                progresspb.Value = value;
-            }
         }
 
     }
