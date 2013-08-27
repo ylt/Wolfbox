@@ -1,7 +1,5 @@
 package co.d3s.enl.wolfbox;
 
-import java.io.Console;
-
 import co.d3s.enl.wolfbox.sites.Site;
 import co.d3s.enl.wolfbox.sites.SiteEntry;
 import co.d3s.enl.wolfbox.sites.danbooru.Danbooru;

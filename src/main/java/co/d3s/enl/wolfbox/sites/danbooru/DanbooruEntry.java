@@ -2,9 +2,8 @@ package co.d3s.enl.wolfbox.sites.danbooru;
 
 import java.util.Date;
 
+import co.d3s.enl.wolfbox.sites.booru.BooruEntry;
 import net.sf.json.JSONObject;
-import co.d3s.enl.wolfbox.sites.BooruEntry;
-import co.d3s.enl.wolfbox.sites.SiteEntry;
 
 public class DanbooruEntry extends BooruEntry {
 	private Danbooru bsite;

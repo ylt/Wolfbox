@@ -9,9 +9,8 @@ import java.util.List;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONException;
 import net.sf.json.JSONObject;
-import co.d3s.enl.wolfbox.sites.Booru;
-import co.d3s.enl.wolfbox.sites.Site;
 import co.d3s.enl.wolfbox.sites.SiteEntry;
+import co.d3s.enl.wolfbox.sites.booru.Booru;
 
 public class Danbooru extends Booru {
 	public String siteURL;

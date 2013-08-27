@@ -2,50 +2,51 @@ package co.d3s.enl.wolfbox.sites.ouroboros;
 
 import java.util.Date;
 
-import co.d3s.enl.wolfbox.sites.SiteEntry;
+import net.sf.json.JSONObject;
+import co.d3s.enl.wolfbox.sites.booru.BooruEntry;
 
-public class OuroborosEntry extends SiteEntry {
+public class OuroborosEntry extends BooruEntry {
+	private Ouroboros bsite;
+	private JSONObject image;
+	
+	public OuroborosEntry(Ouroboros site, JSONObject image) {
+		this.site = this.bsite = site;
+        this.image = image;
+	}
 
 	@Override
 	public String getAuthor() {
-		// TODO Auto-generated method stub
-		return null;
+		return image.getString("author");
 	}
 
 	@Override
 	public String getPreviewURL() {
-		// TODO Auto-generated method stub
-		return null;
+		return image.getString("preview_url");
 	}
 
 	@Override
 	public String getImageURL() {
-		// TODO Auto-generated method stub
-		return null;
+		return image.getString("file_url");
 	}
 
 	@Override
 	public Date getCreationTime() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public String getLink() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.bsite.siteURL + "/post/show/" + image.getString("id") + "/";
 	}
 
 	@Override
 	public int getId() {
-		// TODO Auto-generated method stub
-		return 0;
+		return image.getInt("id");
 	}
 
 	@Override
 	public String getTags() {
-		// TODO Auto-generated method stub
-		return null;
+		return image.getString("tags");
 	}
 
 }
