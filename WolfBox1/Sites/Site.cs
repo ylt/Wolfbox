@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace WolfBox1.Sites
 {
-    abstract class Site
+    public abstract class Site
     {
 
         public BindingSource bs = new BindingSource();
@@ -36,9 +36,57 @@ namespace WolfBox1.Sites
         {
             return "Site";
         }
+
+        public int Progress
+        {
+            get
+            {
+                int total = 0;
+                int count = 0;
+                foreach(SiteEntry entry in getPosts())
+                {
+                    if (entry.ProgressInt > 0)
+                    {
+                        total += entry.ProgressInt;
+                        count++;
+                    }
+                }
+                if (count == 0)
+                {
+                    return 0;
+                }
+                else
+                {
+                    return total / count;
+                }
+            }
+        }
+        public event SiteProgressChange ProgressChange;
+
+        public void triggerProgressChange()
+        {
+            ProgressChange(this, new SiteProgressChangeArgs(this));
+        }
     }
 
-    abstract class SiteEntry : INotifyPropertyChanged
+    public delegate void SiteProgressChange(object source, SiteProgressChangeArgs e);
+    public class SiteProgressChangeArgs : EventArgs
+    {
+        private Site site;
+        public Site Site
+        {
+            get
+            {
+                return site;
+            }
+        }
+        public SiteProgressChangeArgs(Site site)
+        {
+            this.site = site;
+        }
+    }
+
+    public abstract class SiteEntry : INotifyPropertyChanged
     {
         protected Site site;
 
@@ -52,8 +100,17 @@ namespace WolfBox1.Sites
         public abstract string Tags { get; }
 
 
-        private string progress;
-        public string Progress {
+        private int progress;
+        public string Progress
+        {
+            get
+            {
+                return progress + "%";
+            }
+        }
+
+        public int ProgressInt
+        {
             get
             {
                 return progress;
@@ -118,19 +175,10 @@ namespace WolfBox1.Sites
 
         public void DownloadImageProgress(object sender, DownloadProgressChangedEventArgs e)
         {
-            //foreach (DataGridViewRow dr in main.list.Rows)
-            //{
-            //    if ((int)dr.Cells[4].Value != null || (int)dr.Cells[4].Value != 0)
-            //    {
-            //        int progresses = (int)dr.Cells[4].Value;
-            //        tprogress = tprogress + progresses;
-            //    }
-            //}
-            //MessageBox.Show(tprogress.ToString());
-            main.ProgressBarV = e.ProgressPercentage;
-            progress = e.ProgressPercentage + "%";
-            //site.bs.ResetBindings(false);
+            progress = e.ProgressPercentage;
+
             RaisePropertyChanged("Progress");
+            site.triggerProgressChange();
         }
 
         public void DownloadImageComplete(object sender, AsyncCompletedEventArgs e)
