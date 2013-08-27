@@ -36,6 +36,38 @@ namespace WolfBox1.Sites
         {
             return "Site";
         }
+
+        public int Progress
+        {
+            get
+            {
+                int total = 0;
+                foreach(SiteEntry entry in getPosts())
+                {
+                    total += Progress;
+                }
+                return total / getPosts().Count();
+            }
+        }
+        public event SiteProgressChange ProgressChange;
+
+    }
+
+    public delegate void SiteProgressChange(object source, SiteProgressChangeArgs e);
+    public class SiteProgressChangeArgs : EventArgs
+    {
+        private Site site;
+        public Site Site
+        {
+            get
+            {
+                return site;
+            }
+        }
+        public SiteProgressChangeArgs(Site site)
+        {
+            this.site = site;
+        }
     }
 
     abstract class SiteEntry : INotifyPropertyChanged
@@ -52,8 +84,17 @@ namespace WolfBox1.Sites
         public abstract string Tags { get; }
 
 
-        private string progress;
-        public string Progress {
+        private int progress;
+        public string Progress
+        {
+            get
+            {
+                return progress + "%";
+            }
+        }
+
+        public int ProgressInt
+        {
             get
             {
                 return progress;
@@ -128,7 +169,7 @@ namespace WolfBox1.Sites
             //}
             //MessageBox.Show(tprogress.ToString());
             main.ProgressBarV = e.ProgressPercentage;
-            progress = e.ProgressPercentage + "%";
+            progress = e.ProgressPercentage;
             //site.bs.ResetBindings(false);
             RaisePropertyChanged("Progress");
         }
