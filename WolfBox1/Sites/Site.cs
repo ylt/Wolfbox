@@ -51,7 +51,14 @@ namespace WolfBox1.Sites
                         count++;
                     }
                 }
-                return total / count;
+                if (count == 0)
+                {
+                    return 0;
+                }
+                else
+                {
+                    return total / count;
+                }
             }
         }
         public event SiteProgressChange ProgressChange;
