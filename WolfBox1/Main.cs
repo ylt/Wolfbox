@@ -26,6 +26,7 @@ namespace WolfBox1
         public Main()
         {
             InitializeComponent();
+            Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("es-ES");
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -166,7 +167,7 @@ namespace WolfBox1
             DialogResult result = fb.ShowDialog();
             if (result == DialogResult.OK)
             {
-                statusl.Text = "" + fb.SelectedPath;
+                statusl.Text =  "" + fb.SelectedPath;
                 Properties.Settings.Default["folder"] = fb.SelectedPath;
             }
         }
@@ -179,12 +180,14 @@ namespace WolfBox1
 
         private void españolToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo("es-ES");
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("es-ES", true);
+            Properties.Resources.Culture = CultureInfo.CurrentCulture;
         }
 
         private void englishToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US", true);
+            Properties.Resources.Culture = CultureInfo.CurrentCulture;
         }
 
     }

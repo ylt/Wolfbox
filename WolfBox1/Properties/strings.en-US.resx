@@ -118,65 +118,77 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="author" xml:space="preserve">
-    <value>Autor</value>
+    <value>Author</value>
   </data>
-  <data name="default" xml:space="preserve">
-    <value>Predeterminado</value>
+  <data name="def" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="downloading" xml:space="preserve">
+    <value>Downloading...</value>
   </data>
   <data name="ds" xml:space="preserve">
-    <value>Descargar Seleccionados</value>
+    <value>Download Selected</value>
   </data>
   <data name="lang" xml:space="preserve">
-    <value>Lenguaje...</value>
+    <value>Language</value>
+  </data>
+  <data name="loaded" xml:space="preserve">
+    <value>Posts Loaded!</value>
   </data>
   <data name="lr" xml:space="preserve">
-    <value>Lista/Refrescar</value>
+    <value>List/Refresh</value>
   </data>
   <data name="ofolder" xml:space="preserve">
-    <value>Carpeta Destino...</value>
+    <value>Output Folder...</value>
   </data>
   <data name="oformat" xml:space="preserve">
-    <value>Formato Destino...</value>
+    <value>Output Format...</value>
   </data>
   <data name="oformatexplanation" xml:space="preserve">
-    <value>Para uso avanzado solamente.
+    <value>For advanced use only.
 \n
-Si deseas guardar tus archivos en un orden especifico,
-porfavor añade entre estos formatos:
+If you wish to save your files with an specific order,
+please, add within these formats:
 \n
-{server}, {id}, {tags} y/o {date}
+{server}, {id}, {tags} and/or {date}
 \n
-Ejemplo: {server} - {id} - {tags}
-Al guardar: Konachan - 166689 - animal_ears.....</value>
+Example: {server} - {id} - {tags}
+Save: Konachan - 166689 - animal_ears.....</value>
   </data>
   <data name="oformatl" xml:space="preserve">
-    <value>Formato Destino</value>
+    <value>Output Format</value>
   </data>
   <data name="options" xml:space="preserve">
-    <value>Opciones</value>
+    <value>Options</value>
+  </data>
+  <data name="outputfirst" xml:space="preserve">
+    <value>It seems like this is your first time running WolfBox. Please select a folder to output all of your images.</value>
   </data>
   <data name="preview" xml:space="preserve">
-    <value>Vista Previa</value>
+    <value>Preview</value>
   </data>
   <data name="progress" xml:space="preserve">
-    <value>Progreso</value>
+    <value>Progress</value>
   </data>
   <data name="save" xml:space="preserve">
-    <value>Guardar</value>
+    <value>Save</value>
   </data>
   <data name="settings" xml:space="preserve">
-    <value>Configuración</value>
+    <value>Settings</value>
+  </data>
+  <data name="statusof" xml:space="preserve">
+    <value>Output folder:</value>
   </data>
   <data name="tags" xml:space="preserve">
-    <value>Etiquetas</value>
+    <value>Tags</value>
   </data>
-  <data name="tags..." xml:space="preserve">
-    <value>Etiquetas...</value>
+  <data name="tagsp" xml:space="preserve">
+    <value>Tags...</value>
   </data>
   <data name="uploader" xml:space="preserve">
-    <value>Cargador</value>
+    <value>Uploader</value>
   </data>
   <data name="welcome" xml:space="preserve">
-    <value>Bienvenido a WolfBox!</value>
+    <value>Welcome to WolfBox!</value>
   </data>
 </root>

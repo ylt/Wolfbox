@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.serverlist = new System.Windows.Forms.ComboBox();
             this.listb = new System.Windows.Forms.Button();
             this.downloadsb = new System.Windows.Forms.Button();
@@ -48,6 +48,11 @@
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.outputFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.outputFormatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.languagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.españolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.francaisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.日本語ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pageb = new System.Windows.Forms.NumericUpDown();
             this.statusl = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -57,11 +62,6 @@
             this.RightToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.LeftToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.ContentPanel = new System.Windows.Forms.ToolStripContentPanel();
-            this.languagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.españolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.francaisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.日本語ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.list)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pageb)).BeginInit();
@@ -73,48 +73,37 @@
             this.serverlist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.serverlist.FormattingEnabled = true;
             this.serverlist.Items.AddRange(new object[] {
-            "Konachan",
-            "Danbooru",
-            "Gelbooru"});
-            this.serverlist.Location = new System.Drawing.Point(13, 29);
+            resources.GetString("serverlist.Items"),
+            resources.GetString("serverlist.Items1"),
+            resources.GetString("serverlist.Items2")});
+            resources.ApplyResources(this.serverlist, "serverlist");
             this.serverlist.Name = "serverlist";
-            this.serverlist.Size = new System.Drawing.Size(197, 21);
-            this.serverlist.TabIndex = 0;
             // 
             // listb
             // 
-            this.listb.Location = new System.Drawing.Point(216, 27);
+            resources.ApplyResources(this.listb, "listb");
             this.listb.Name = "listb";
-            this.listb.Size = new System.Drawing.Size(75, 23);
-            this.listb.TabIndex = 3;
-            this.listb.Text = "List/Refresh";
             this.listb.UseVisualStyleBackColor = true;
             this.listb.Click += new System.EventHandler(this.listb_Click);
             // 
             // downloadsb
             // 
-            this.downloadsb.Location = new System.Drawing.Point(297, 27);
+            resources.ApplyResources(this.downloadsb, "downloadsb");
             this.downloadsb.Name = "downloadsb";
-            this.downloadsb.Size = new System.Drawing.Size(110, 23);
-            this.downloadsb.TabIndex = 4;
-            this.downloadsb.Text = "Download Selected";
             this.downloadsb.UseVisualStyleBackColor = true;
             this.downloadsb.Click += new System.EventHandler(this.downloadsb_Click);
             // 
             // tagsb
             // 
-            this.tagsb.Location = new System.Drawing.Point(60, 56);
+            resources.ApplyResources(this.tagsb, "tagsb");
             this.tagsb.Name = "tagsb";
-            this.tagsb.Size = new System.Drawing.Size(347, 20);
-            this.tagsb.TabIndex = 6;
-            this.tagsb.Text = "Tags...";
             this.tagsb.Enter += new System.EventHandler(this.tagsb_Enter);
             this.tagsb.Leave += new System.EventHandler(this.tagsb_Leave);
             // 
             // imglist
             // 
             this.imglist.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imglist.ImageSize = new System.Drawing.Size(256, 256);
+            resources.ApplyResources(this.imglist, "imglist");
             this.imglist.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // list
@@ -123,9 +112,7 @@
             this.list.AllowUserToDeleteRows = false;
             this.list.AllowUserToResizeColumns = false;
             this.list.AllowUserToResizeRows = false;
-            this.list.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.list, "list");
             this.list.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.list.BackgroundColor = System.Drawing.Color.White;
             this.list.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -142,7 +129,6 @@
             this.Tags});
             this.list.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.list.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.list.Location = new System.Drawing.Point(13, 82);
             this.list.Name = "list";
             this.list.ReadOnly = true;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -164,15 +150,13 @@
             this.list.ShowCellToolTips = false;
             this.list.ShowEditingIcon = false;
             this.list.ShowRowErrors = false;
-            this.list.Size = new System.Drawing.Size(945, 304);
-            this.list.TabIndex = 7;
             this.list.SelectionChanged += new System.EventHandler(this.list_SelectionChanged);
             // 
             // Preview
             // 
             this.Preview.DataPropertyName = "PreviewImage";
             this.Preview.FillWeight = 213.198F;
-            this.Preview.HeaderText = "Preview";
+            resources.ApplyResources(this.Preview, "Preview");
             this.Preview.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
             this.Preview.Name = "Preview";
             this.Preview.ReadOnly = true;
@@ -181,7 +165,7 @@
             // 
             this.ID.DataPropertyName = "Id";
             this.ID.FillWeight = 47.95577F;
-            this.ID.HeaderText = "ID";
+            resources.ApplyResources(this.ID, "ID");
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
             this.ID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -190,7 +174,7 @@
             // 
             this.Author.DataPropertyName = "Author";
             this.Author.FillWeight = 58.51339F;
-            this.Author.HeaderText = "Author";
+            resources.ApplyResources(this.Author, "Author");
             this.Author.Name = "Author";
             this.Author.ReadOnly = true;
             this.Author.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -199,7 +183,7 @@
             // 
             this.Uploader.DataPropertyName = "Uploader";
             this.Uploader.FillWeight = 53.87841F;
-            this.Uploader.HeaderText = "Uploader";
+            resources.ApplyResources(this.Uploader, "Uploader");
             this.Uploader.Name = "Uploader";
             this.Uploader.ReadOnly = true;
             // 
@@ -207,7 +191,7 @@
             // 
             this.Progress.DataPropertyName = "Progress";
             this.Progress.FillWeight = 37.28549F;
-            this.Progress.HeaderText = "Progress";
+            resources.ApplyResources(this.Progress, "Progress");
             this.Progress.Name = "Progress";
             this.Progress.ReadOnly = true;
             this.Progress.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -216,7 +200,7 @@
             // 
             this.Tags.DataPropertyName = "Tags";
             this.Tags.FillWeight = 289.169F;
-            this.Tags.HeaderText = "Tags";
+            resources.ApplyResources(this.Tags, "Tags");
             this.Tags.Name = "Tags";
             this.Tags.ReadOnly = true;
             this.Tags.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -226,33 +210,26 @@
             this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.settingsToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(970, 24);
-            this.menuStrip1.TabIndex = 12;
-            this.menuStrip1.Text = "menuStrip1";
             // 
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
-            this.settingsToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            resources.ApplyResources(this.settingsToolStripMenuItem, "settingsToolStripMenuItem");
             this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.outputFolderToolStripMenuItem,
             this.outputFormatToolStripMenuItem,
             this.languagesToolStripMenuItem});
             this.settingsToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.settingsToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.White;
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.settingsToolStripMenuItem.Text = "Settings";
             // 
             // outputFolderToolStripMenuItem
             // 
             this.outputFolderToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
             this.outputFolderToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.outputFolderToolStripMenuItem.Name = "outputFolderToolStripMenuItem";
-            this.outputFolderToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.outputFolderToolStripMenuItem.Text = "Output Folder...";
+            resources.ApplyResources(this.outputFolderToolStripMenuItem, "outputFolderToolStripMenuItem");
             this.outputFolderToolStripMenuItem.Click += new System.EventHandler(this.outputFolderToolStripMenuItem_Click);
             // 
             // outputFormatToolStripMenuItem
@@ -260,76 +237,8 @@
             this.outputFormatToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
             this.outputFormatToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.outputFormatToolStripMenuItem.Name = "outputFormatToolStripMenuItem";
-            this.outputFormatToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.outputFormatToolStripMenuItem.Text = "Output Format...";
+            resources.ApplyResources(this.outputFormatToolStripMenuItem, "outputFormatToolStripMenuItem");
             this.outputFormatToolStripMenuItem.Click += new System.EventHandler(this.outputFormatToolStripMenuItem_Click);
-            // 
-            // pageb
-            // 
-            this.pageb.Location = new System.Drawing.Point(15, 56);
-            this.pageb.Name = "pageb";
-            this.pageb.Size = new System.Drawing.Size(39, 20);
-            this.pageb.TabIndex = 11;
-            // 
-            // statusl
-            // 
-            this.statusl.Name = "statusl";
-            this.statusl.Size = new System.Drawing.Size(121, 17);
-            this.statusl.Text = "Welcome to WolfBox!";
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.statusl,
-            this.progresspb});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 395);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(970, 22);
-            this.statusStrip1.TabIndex = 13;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // progresspb
-            // 
-            this.progresspb.Name = "progresspb";
-            this.progresspb.Size = new System.Drawing.Size(100, 16);
-            this.progresspb.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.progresspb.Tag = "";
-            // 
-            // BottomToolStripPanel
-            // 
-            this.BottomToolStripPanel.Location = new System.Drawing.Point(0, 0);
-            this.BottomToolStripPanel.Name = "BottomToolStripPanel";
-            this.BottomToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.BottomToolStripPanel.RowMargin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.BottomToolStripPanel.Size = new System.Drawing.Size(0, 0);
-            // 
-            // TopToolStripPanel
-            // 
-            this.TopToolStripPanel.Location = new System.Drawing.Point(0, 0);
-            this.TopToolStripPanel.Name = "TopToolStripPanel";
-            this.TopToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.TopToolStripPanel.RowMargin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.TopToolStripPanel.Size = new System.Drawing.Size(0, 0);
-            // 
-            // RightToolStripPanel
-            // 
-            this.RightToolStripPanel.Location = new System.Drawing.Point(0, 0);
-            this.RightToolStripPanel.Name = "RightToolStripPanel";
-            this.RightToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.RightToolStripPanel.RowMargin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.RightToolStripPanel.Size = new System.Drawing.Size(0, 0);
-            // 
-            // LeftToolStripPanel
-            // 
-            this.LeftToolStripPanel.Location = new System.Drawing.Point(0, 0);
-            this.LeftToolStripPanel.Name = "LeftToolStripPanel";
-            this.LeftToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.LeftToolStripPanel.RowMargin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.LeftToolStripPanel.Size = new System.Drawing.Size(0, 0);
-            // 
-            // ContentPanel
-            // 
-            this.ContentPanel.Size = new System.Drawing.Size(150, 150);
             // 
             // languagesToolStripMenuItem
             // 
@@ -339,41 +248,91 @@
             this.francaisToolStripMenuItem,
             this.日本語ToolStripMenuItem});
             this.languagesToolStripMenuItem.Name = "languagesToolStripMenuItem";
-            this.languagesToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.languagesToolStripMenuItem.Text = "Languages";
+            resources.ApplyResources(this.languagesToolStripMenuItem, "languagesToolStripMenuItem");
             // 
             // englishToolStripMenuItem
             // 
             this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
-            this.englishToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.englishToolStripMenuItem.Text = "English";
+            resources.ApplyResources(this.englishToolStripMenuItem, "englishToolStripMenuItem");
             this.englishToolStripMenuItem.Click += new System.EventHandler(this.englishToolStripMenuItem_Click);
             // 
             // españolToolStripMenuItem
             // 
             this.españolToolStripMenuItem.Name = "españolToolStripMenuItem";
-            this.españolToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.españolToolStripMenuItem.Text = "Español";
+            resources.ApplyResources(this.españolToolStripMenuItem, "españolToolStripMenuItem");
             this.españolToolStripMenuItem.Click += new System.EventHandler(this.españolToolStripMenuItem_Click);
             // 
             // francaisToolStripMenuItem
             // 
             this.francaisToolStripMenuItem.Name = "francaisToolStripMenuItem";
-            this.francaisToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.francaisToolStripMenuItem.Text = "Francais";
+            resources.ApplyResources(this.francaisToolStripMenuItem, "francaisToolStripMenuItem");
             // 
             // 日本語ToolStripMenuItem
             // 
             this.日本語ToolStripMenuItem.Name = "日本語ToolStripMenuItem";
-            this.日本語ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.日本語ToolStripMenuItem.Text = "日本語";
+            resources.ApplyResources(this.日本語ToolStripMenuItem, "日本語ToolStripMenuItem");
+            // 
+            // pageb
+            // 
+            resources.ApplyResources(this.pageb, "pageb");
+            this.pageb.Name = "pageb";
+            // 
+            // statusl
+            // 
+            this.statusl.Name = "statusl";
+            resources.ApplyResources(this.statusl, "statusl");
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.statusl,
+            this.progresspb});
+            resources.ApplyResources(this.statusStrip1, "statusStrip1");
+            this.statusStrip1.Name = "statusStrip1";
+            // 
+            // progresspb
+            // 
+            this.progresspb.Name = "progresspb";
+            resources.ApplyResources(this.progresspb, "progresspb");
+            this.progresspb.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.progresspb.Tag = "";
+            // 
+            // BottomToolStripPanel
+            // 
+            resources.ApplyResources(this.BottomToolStripPanel, "BottomToolStripPanel");
+            this.BottomToolStripPanel.Name = "BottomToolStripPanel";
+            this.BottomToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.BottomToolStripPanel.RowMargin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            // 
+            // TopToolStripPanel
+            // 
+            resources.ApplyResources(this.TopToolStripPanel, "TopToolStripPanel");
+            this.TopToolStripPanel.Name = "TopToolStripPanel";
+            this.TopToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.TopToolStripPanel.RowMargin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            // 
+            // RightToolStripPanel
+            // 
+            resources.ApplyResources(this.RightToolStripPanel, "RightToolStripPanel");
+            this.RightToolStripPanel.Name = "RightToolStripPanel";
+            this.RightToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.RightToolStripPanel.RowMargin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            // 
+            // LeftToolStripPanel
+            // 
+            resources.ApplyResources(this.LeftToolStripPanel, "LeftToolStripPanel");
+            this.LeftToolStripPanel.Name = "LeftToolStripPanel";
+            this.LeftToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.LeftToolStripPanel.RowMargin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            // 
+            // ContentPanel
+            // 
+            resources.ApplyResources(this.ContentPanel, "ContentPanel");
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(970, 417);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.pageb);
             this.Controls.Add(this.list);
@@ -382,10 +341,8 @@
             this.Controls.Add(this.listb);
             this.Controls.Add(this.serverlist);
             this.Controls.Add(this.menuStrip1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";
-            this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.list)).EndInit();
             this.menuStrip1.ResumeLayout(false);
