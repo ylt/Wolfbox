@@ -51,12 +51,17 @@
             this.pageb = new System.Windows.Forms.NumericUpDown();
             this.statusl = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.progresspb = new System.Windows.Forms.ToolStripProgressBar();
             this.BottomToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.TopToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.RightToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.LeftToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.ContentPanel = new System.Windows.Forms.ToolStripContentPanel();
-            this.progresspb = new System.Windows.Forms.ToolStripProgressBar();
+            this.languagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.españolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.francaisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.日本語ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.list)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pageb)).BeginInit();
@@ -233,7 +238,8 @@
             this.settingsToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.outputFolderToolStripMenuItem,
-            this.outputFormatToolStripMenuItem});
+            this.outputFormatToolStripMenuItem,
+            this.languagesToolStripMenuItem});
             this.settingsToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.settingsToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.White;
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
@@ -282,6 +288,13 @@
             this.statusStrip1.TabIndex = 13;
             this.statusStrip1.Text = "statusStrip1";
             // 
+            // progresspb
+            // 
+            this.progresspb.Name = "progresspb";
+            this.progresspb.Size = new System.Drawing.Size(100, 16);
+            this.progresspb.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.progresspb.Tag = "";
+            // 
             // BottomToolStripPanel
             // 
             this.BottomToolStripPanel.Location = new System.Drawing.Point(0, 0);
@@ -318,12 +331,42 @@
             // 
             this.ContentPanel.Size = new System.Drawing.Size(150, 150);
             // 
-            // progresspb
+            // languagesToolStripMenuItem
             // 
-            this.progresspb.Name = "progresspb";
-            this.progresspb.Size = new System.Drawing.Size(100, 16);
-            this.progresspb.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.progresspb.Tag = "";
+            this.languagesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.englishToolStripMenuItem,
+            this.españolToolStripMenuItem,
+            this.francaisToolStripMenuItem,
+            this.日本語ToolStripMenuItem});
+            this.languagesToolStripMenuItem.Name = "languagesToolStripMenuItem";
+            this.languagesToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.languagesToolStripMenuItem.Text = "Languages";
+            // 
+            // englishToolStripMenuItem
+            // 
+            this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
+            this.englishToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.englishToolStripMenuItem.Text = "English";
+            this.englishToolStripMenuItem.Click += new System.EventHandler(this.englishToolStripMenuItem_Click);
+            // 
+            // españolToolStripMenuItem
+            // 
+            this.españolToolStripMenuItem.Name = "españolToolStripMenuItem";
+            this.españolToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.españolToolStripMenuItem.Text = "Español";
+            this.españolToolStripMenuItem.Click += new System.EventHandler(this.españolToolStripMenuItem_Click);
+            // 
+            // francaisToolStripMenuItem
+            // 
+            this.francaisToolStripMenuItem.Name = "francaisToolStripMenuItem";
+            this.francaisToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.francaisToolStripMenuItem.Text = "Francais";
+            // 
+            // 日本語ToolStripMenuItem
+            // 
+            this.日本語ToolStripMenuItem.Name = "日本語ToolStripMenuItem";
+            this.日本語ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.日本語ToolStripMenuItem.Text = "日本語";
             // 
             // Main
             // 
@@ -382,6 +425,11 @@
         public System.Windows.Forms.ToolStripProgressBar progresspb;
         public System.Windows.Forms.DataGridView list;
         public System.Windows.Forms.ToolStripStatusLabel statusl;
+        private System.Windows.Forms.ToolStripMenuItem languagesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem englishToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem españolToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem francaisToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 日本語ToolStripMenuItem;
     }
 }
 

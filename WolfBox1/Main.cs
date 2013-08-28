@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
@@ -164,7 +166,7 @@ namespace WolfBox1
             DialogResult result = fb.ShowDialog();
             if (result == DialogResult.OK)
             {
-                statusl.Text = "Output folder set to " + fb.SelectedPath;
+                statusl.Text = "" + fb.SelectedPath;
                 Properties.Settings.Default["folder"] = fb.SelectedPath;
             }
         }
@@ -173,6 +175,16 @@ namespace WolfBox1
         {
             Options options = new Options();
             options.Show();
+        }
+
+        private void españolToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("es-ES");
+        }
+
+        private void englishToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
         }
 
     }
