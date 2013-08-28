@@ -26,7 +26,15 @@ namespace WolfBox1
         public Main()
         {
             InitializeComponent();
-            Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("es-ES");
+        }
+
+        private void ChangeLanguage(string lang)
+        {
+            foreach (Control c in this.Controls)
+            {
+                ComponentResourceManager resources = new ComponentResourceManager(typeof(Main));
+                resources.ApplyResources(c, c.Name, new CultureInfo(lang));
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -180,14 +188,12 @@ namespace WolfBox1
 
         private void españolToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo("es-ES", true);
-            Properties.Resources.Culture = CultureInfo.CurrentCulture;
+            ChangeLanguage("es-VE");
         }
 
         private void englishToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US", true);
-            Properties.Resources.Culture = CultureInfo.CurrentCulture;
+            ChangeLanguage("en-US");
         }
 
     }

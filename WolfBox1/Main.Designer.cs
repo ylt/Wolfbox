@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.serverlist = new System.Windows.Forms.ComboBox();
             this.listb = new System.Windows.Forms.Button();
             this.downloadsb = new System.Windows.Forms.Button();
@@ -45,10 +45,10 @@
             this.Progress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tags = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.outputFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.outputFormatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.languagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsm = new System.Windows.Forms.ToolStripMenuItem();
+            this.ofolderm = new System.Windows.Forms.ToolStripMenuItem();
+            this.oformatm = new System.Windows.Forms.ToolStripMenuItem();
+            this.langm = new System.Windows.Forms.ToolStripMenuItem();
             this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.españolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.francaisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,13 +70,13 @@
             // 
             // serverlist
             // 
+            resources.ApplyResources(this.serverlist, "serverlist");
             this.serverlist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.serverlist.FormattingEnabled = true;
             this.serverlist.Items.AddRange(new object[] {
             resources.GetString("serverlist.Items"),
             resources.GetString("serverlist.Items1"),
             resources.GetString("serverlist.Items2")});
-            resources.ApplyResources(this.serverlist, "serverlist");
             this.serverlist.Name = "serverlist";
             // 
             // listb
@@ -108,11 +108,11 @@
             // 
             // list
             // 
+            resources.ApplyResources(this.list, "list");
             this.list.AllowUserToAddRows = false;
             this.list.AllowUserToDeleteRows = false;
             this.list.AllowUserToResizeColumns = false;
             this.list.AllowUserToResizeRows = false;
-            resources.ApplyResources(this.list, "list");
             this.list.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.list.BackgroundColor = System.Drawing.Color.White;
             this.list.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -131,18 +131,18 @@
             this.list.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.list.Name = "list";
             this.list.ReadOnly = true;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.list.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.list.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.list.RowHeadersVisible = false;
             this.list.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.list.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.list.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.list.RowTemplate.Height = 200;
             this.list.RowTemplate.ReadOnly = true;
             this.list.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -207,70 +207,70 @@
             // 
             // menuStrip1
             // 
+            resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.settingsToolStripMenuItem});
-            resources.ApplyResources(this.menuStrip1, "menuStrip1");
+            this.settingsm});
             this.menuStrip1.Name = "menuStrip1";
             // 
-            // settingsToolStripMenuItem
+            // settingsm
             // 
-            this.settingsToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.settingsToolStripMenuItem, "settingsToolStripMenuItem");
-            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.outputFolderToolStripMenuItem,
-            this.outputFormatToolStripMenuItem,
-            this.languagesToolStripMenuItem});
-            this.settingsToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            resources.ApplyResources(this.settingsm, "settingsm");
+            this.settingsm.BackColor = System.Drawing.Color.Transparent;
+            this.settingsm.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ofolderm,
+            this.oformatm,
+            this.langm});
+            this.settingsm.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.settingsm.Name = "settingsm";
             // 
-            // outputFolderToolStripMenuItem
+            // ofolderm
             // 
-            this.outputFolderToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
-            this.outputFolderToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.outputFolderToolStripMenuItem.Name = "outputFolderToolStripMenuItem";
-            resources.ApplyResources(this.outputFolderToolStripMenuItem, "outputFolderToolStripMenuItem");
-            this.outputFolderToolStripMenuItem.Click += new System.EventHandler(this.outputFolderToolStripMenuItem_Click);
+            resources.ApplyResources(this.ofolderm, "ofolderm");
+            this.ofolderm.BackColor = System.Drawing.SystemColors.Control;
+            this.ofolderm.ForeColor = System.Drawing.Color.Black;
+            this.ofolderm.Name = "ofolderm";
+            this.ofolderm.Click += new System.EventHandler(this.outputFolderToolStripMenuItem_Click);
             // 
-            // outputFormatToolStripMenuItem
+            // oformatm
             // 
-            this.outputFormatToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
-            this.outputFormatToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.outputFormatToolStripMenuItem.Name = "outputFormatToolStripMenuItem";
-            resources.ApplyResources(this.outputFormatToolStripMenuItem, "outputFormatToolStripMenuItem");
-            this.outputFormatToolStripMenuItem.Click += new System.EventHandler(this.outputFormatToolStripMenuItem_Click);
+            resources.ApplyResources(this.oformatm, "oformatm");
+            this.oformatm.BackColor = System.Drawing.SystemColors.Control;
+            this.oformatm.ForeColor = System.Drawing.Color.Black;
+            this.oformatm.Name = "oformatm";
+            this.oformatm.Click += new System.EventHandler(this.outputFormatToolStripMenuItem_Click);
             // 
-            // languagesToolStripMenuItem
+            // langm
             // 
-            this.languagesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            resources.ApplyResources(this.langm, "langm");
+            this.langm.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.englishToolStripMenuItem,
             this.españolToolStripMenuItem,
             this.francaisToolStripMenuItem,
             this.日本語ToolStripMenuItem});
-            this.languagesToolStripMenuItem.Name = "languagesToolStripMenuItem";
-            resources.ApplyResources(this.languagesToolStripMenuItem, "languagesToolStripMenuItem");
+            this.langm.Name = "langm";
             // 
             // englishToolStripMenuItem
             // 
-            this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
             resources.ApplyResources(this.englishToolStripMenuItem, "englishToolStripMenuItem");
+            this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
             this.englishToolStripMenuItem.Click += new System.EventHandler(this.englishToolStripMenuItem_Click);
             // 
             // españolToolStripMenuItem
             // 
-            this.españolToolStripMenuItem.Name = "españolToolStripMenuItem";
             resources.ApplyResources(this.españolToolStripMenuItem, "españolToolStripMenuItem");
+            this.españolToolStripMenuItem.Name = "españolToolStripMenuItem";
             this.españolToolStripMenuItem.Click += new System.EventHandler(this.españolToolStripMenuItem_Click);
             // 
             // francaisToolStripMenuItem
             // 
-            this.francaisToolStripMenuItem.Name = "francaisToolStripMenuItem";
             resources.ApplyResources(this.francaisToolStripMenuItem, "francaisToolStripMenuItem");
+            this.francaisToolStripMenuItem.Name = "francaisToolStripMenuItem";
             // 
             // 日本語ToolStripMenuItem
             // 
-            this.日本語ToolStripMenuItem.Name = "日本語ToolStripMenuItem";
             resources.ApplyResources(this.日本語ToolStripMenuItem, "日本語ToolStripMenuItem");
+            this.日本語ToolStripMenuItem.Name = "日本語ToolStripMenuItem";
             // 
             // pageb
             // 
@@ -279,21 +279,21 @@
             // 
             // statusl
             // 
-            this.statusl.Name = "statusl";
             resources.ApplyResources(this.statusl, "statusl");
+            this.statusl.Name = "statusl";
             // 
             // statusStrip1
             // 
+            resources.ApplyResources(this.statusStrip1, "statusStrip1");
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusl,
             this.progresspb});
-            resources.ApplyResources(this.statusStrip1, "statusStrip1");
             this.statusStrip1.Name = "statusStrip1";
             // 
             // progresspb
             // 
-            this.progresspb.Name = "progresspb";
             resources.ApplyResources(this.progresspb, "progresspb");
+            this.progresspb.Name = "progresspb";
             this.progresspb.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progresspb.Tag = "";
             // 
@@ -363,15 +363,9 @@
         private System.Windows.Forms.TextBox tagsb;
         private System.Windows.Forms.ImageList imglist;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem outputFolderToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem outputFormatToolStripMenuItem;
-        private System.Windows.Forms.DataGridViewImageColumn Preview;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Author;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Uploader;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Progress;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tags;
+        private System.Windows.Forms.ToolStripMenuItem settingsm;
+        private System.Windows.Forms.ToolStripMenuItem ofolderm;
+        private System.Windows.Forms.ToolStripMenuItem oformatm;
         private System.Windows.Forms.NumericUpDown pageb;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripPanel BottomToolStripPanel;
@@ -382,11 +376,17 @@
         public System.Windows.Forms.ToolStripProgressBar progresspb;
         public System.Windows.Forms.DataGridView list;
         public System.Windows.Forms.ToolStripStatusLabel statusl;
-        private System.Windows.Forms.ToolStripMenuItem languagesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem langm;
         private System.Windows.Forms.ToolStripMenuItem englishToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem españolToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem francaisToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 日本語ToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewImageColumn Preview;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Author;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Uploader;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Progress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tags;
     }
 }
 

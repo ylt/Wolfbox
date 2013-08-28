@@ -97,6 +97,12 @@
     <Compile Include="Sites\Reddit.cs" />
     <Compile Include="Sites\Site.cs" />
     <Compile Include="Util\Misc.cs" />
+    <EmbeddedResource Include="Main.en-US.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.es-VE.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
