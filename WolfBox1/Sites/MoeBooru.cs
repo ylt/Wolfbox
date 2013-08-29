@@ -60,7 +60,7 @@ namespace WolfBox1.Sites
         }
     }
 
-    class MoebooruEntry : SiteEntry
+    class MoebooruEntry : BooruEntry
     {
        
         private Moebooru bsite;

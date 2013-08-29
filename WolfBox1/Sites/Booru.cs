@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace WolfBox1.Sites
 {
-    abstract class Booru : Site
+    public abstract class Booru : Site
+    {
+    }
+
+    public abstract class BooruEntry : SiteEntry
+    {
+    }
+
+    public abstract class BooruQuery : SiteQuery
     {
     }
 }

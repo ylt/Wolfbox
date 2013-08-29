@@ -199,4 +199,10 @@ namespace WolfBox1.Sites
         
 
     }
+
+    public abstract class SiteQuery
+    {
+    }
+
 }
+
