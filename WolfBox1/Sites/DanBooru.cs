@@ -13,6 +13,11 @@ using System.Windows.Forms;
 
 namespace WolfBox1.Sites
 {
+    //http://danbooru.donmai.us/wiki_pages/43049
+    public class DanbooruQuery : BooruQuery
+    {
+    }
+
     class Danbooru : Booru
     {
         private WebClient w = new WebClient();

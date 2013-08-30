@@ -14,6 +14,11 @@ using System.Xml.Serialization;
 
 namespace WolfBox1.Sites
 {
+    //http://gelbooru.com/index.php?page=help&topic=cheatsheet
+    public class GelbooruQuery : BooruQuery
+    {
+    }
+
     class Gelbooru : Booru
     {
         private WebClient w = new WebClient();

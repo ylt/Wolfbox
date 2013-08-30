@@ -13,6 +13,12 @@ using System.Windows.Forms;
 
 namespace WolfBox1.Sites
 {
+    //http://konachan.com/help/cheatsheet if Haruka ever stops crying
+    //https://yande.re/help/cheatsheet
+    public class MoebooruQuery : BooruQuery
+    {
+    }
+
     class Moebooru : Booru
     {
         private WebClient w = new WebClient();

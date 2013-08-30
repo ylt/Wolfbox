@@ -13,6 +13,11 @@ using System.Windows.Forms;
 
 namespace WolfBox1.Sites
 {
+    //http://e621.net/help/cheatsheet
+    public class OuroborosQuery : BooruQuery
+    {
+    }
+
     class Ouroboros : Booru
     {
         private WebClient w = new WebClient();
