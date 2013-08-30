@@ -5,14 +5,28 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+
 import java.awt.GridBagLayout;
+
 import javax.swing.JButton;
+
 import java.awt.GridBagConstraints;
+
 import javax.swing.JSpinner;
+
 import java.awt.Insets;
+
 import javax.swing.JTextField;
 import javax.swing.JTable;
 import javax.swing.JComboBox;
+
+import com.jgoodies.forms.layout.ColumnSpec;
+import com.jgoodies.forms.layout.FormLayout;
+import com.jgoodies.forms.layout.RowSpec;
+import java.awt.FlowLayout;
+import javax.swing.SpringLayout;
+import javax.swing.BoxLayout;
+import java.awt.Dimension;
 
 public class Main extends JFrame {
 	private JTable table;
@@ -37,15 +51,10 @@ public class Main extends JFrame {
 	 * Create the frame.
 	 */
 	public Main() {
-		getContentPane().setLayout(new BorderLayout(0, 0));
+		getContentPane().setLayout(new BoxLayout(getContentPane(), BoxLayout.X_AXIS));
 		
 		table = new JTable();
-		getContentPane().add(table, BorderLayout.CENTER);
-		
-		JPanel panel = new JPanel();
-		getContentPane().add(panel, BorderLayout.NORTH);
-		panel.setLayout(new FormLayout(new ColumnSpec[] {},
-			new RowSpec[] {}));
+		table.setSize(new Dimension(100, 100));
+		getContentPane().add(table);
 	}
-
 }
