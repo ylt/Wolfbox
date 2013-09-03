@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<sites>
+  <site platform="danbooru" domain="danbooru.donmai.us" name="Danbooru"></site>
+  <site platform="danbooru" domain="hijiribe.donmai.us" name="hijiribe"></site>
+  <site platform="danbooru" domain="sonohara.donmai.us" name="sonohara"></site>
+
+  <site platform="gelbooru" domain="gelbooru.com" name="Gelbooru"></site>
+  <site platform="gelbooru" domain="rule34.booru.org" name="Rule34"></site>
+  <site platform="gelbooru" domain="safebooru.org" name="Safebooru"></site>
+  
+  <site platform="moebooru" domain="yande.re" name="Yande.re"></site>
+  <site platform="moebooru" domain="konachan.com" name="Konachan.com"></site>
+</sites>
