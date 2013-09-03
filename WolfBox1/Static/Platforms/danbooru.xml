@@ -1,6 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<platform>
-  <list>
+<Platform>
+  <Details>
+    <Name>Danbooru v2</Name>
+    <XmlName>danbooru</XmlName>
+  </Details>
+  
+  <List>
     <Json>
       <PostAttributes>
         <CreationTime format="ISO8601">created_at</CreationTime>
@@ -29,10 +34,10 @@
         <Tags>tag_string</Tags>
       </PostAttributes>
     </Xml>
-  </list>
+  </List>
 
   <interface>
     <Json />
     <Xml />
   </interface>
-</platform>
+</Platform>
