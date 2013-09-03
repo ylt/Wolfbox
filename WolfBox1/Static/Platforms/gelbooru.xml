@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<platform>
+  <list>
+    <Xml>
+      <PageAttributes>
+        <Offset>offset</Offset>
+        <Limit>limit</Limit>
+      </PageAttributes>
+
+      <PostAttributes>
+        <CreationTime format="ISO8601">created_at</CreationTime>
+        <Author></Author> <!-- None >:/ -->
+        <PreviewURL type="absolute">preview_url</PreviewURL>
+        <ImageURL type="absolute">file_url</ImageURL>
+        <Link type="imageId">id</Link>
+        <Id>id</Id>
+        <Tags>tags</Tags>
+      </PostAttributes>
+    </Xml>
+  </list>
+
+  <interface>
+    <Xml />
+  </interface>
+</platform>

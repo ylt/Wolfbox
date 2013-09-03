@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<platform>
+  <list>
+    <Json>
+      <PostAttributes>
+        <CreationTime format="ISO8601">created_at</CreationTime>
+        <Author>uploader_name</Author>
+        <PreviewURL type="relative">preview_file_url</PreviewURL>
+        <ImageURL type="relative">file_url</ImageURL>
+        <Link type="imageId">id</Link>
+        <Id>id</Id>
+        <Tags>tag_string</Tags>
+      </PostAttributes>
+    </Json>
+
+    <Xml>
+      <PageAttributes>
+        <Count>count</Count>
+        <Offset>offset</Offset>
+      </PageAttributes>
+      
+      <PostAttributes>
+        <CreationTime format="ISO8601">created_at</CreationTime>
+        <Author>uploader_name</Author>
+        <PreviewURL type="relative">preview_file_url</PreviewURL>
+        <ImageURL type="relative">file_url</ImageURL>
+        <Link type="imageId">id</Link>
+        <Id>id</Id>
+        <Tags>tag_string</Tags>
+      </PostAttributes>
+    </Xml>
+  </list>
+
+  <interface>
+    <Json />
+    <Xml />
+  </interface>
+</platform>

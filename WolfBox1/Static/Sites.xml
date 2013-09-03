@@ -5,7 +5,13 @@
   <site platform="danbooru" domain="hijiribe.donmai.us" name="hijiribe"></site>
   <site platform="danbooru" domain="sonohara.donmai.us" name="sonohara"></site>
 
-  <site platform="gelbooru" domain="gelbooru.com" name="Gelbooru"></site>
+  <site platform="gelbooru" domain="gelbooru.com" name="Gelbooru">
+    <login 
+      parameter="false"
+      method="post"
+      url="http://gelbooru.com/intermission.php"
+      />
+  </site>
   <site platform="gelbooru" domain="rule34.booru.org" name="Rule34"></site>
   <site platform="gelbooru" domain="safebooru.org" name="Safebooru"></site>
   
