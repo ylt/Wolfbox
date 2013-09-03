@@ -11,14 +11,21 @@ namespace WolfBox1.Manager
 
     class PlatformManager
     {
+        List<Platform> platforms;
+
         public PlatformManager()
         {
             string[] files = Directory.GetFiles("Platforms");
             foreach (string file in files)
             {
-                XmlDocument xmlDoc = new XmlDocument();
-                xmlDoc.Load(file);
+               
             }
+        }
+
+        public Platform GetPlatformByXmlName(string name)
+        {
+            //throws exception if name not found, or >1 entry
+            return platforms.Single(s => s.XmlName == name);
         }
     }
 }
